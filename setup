@@ -1,0 +1,69 @@
+#!/bin/bash
+#
+# paper-writing-skill setup
+#
+# Usage:
+#   git clone <repo-url>
+#   cd paper-writing-skill
+#   ./setup
+#
+# What this does:
+#   Copies the skill into ~/.claude/skills/paper-writing/ so Claude Code
+#   can discover and invoke it when you type /paper-writing.
+#
+# The skill works immediately with Prof. Gupta's writing rules as defaults.
+# To customize, edit the files in author_profile/ — see the README.
+#
+
+set -e
+
+SKILL_NAME="paper-writing"
+SKILL_DIR="$HOME/.claude/skills/$SKILL_NAME"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+echo "=== Paper Writing Skill Setup ==="
+echo ""
+
+# Check if skill already exists
+if [ -d "$SKILL_DIR" ]; then
+    echo "Found existing skill at $SKILL_DIR"
+    read -p "Overwrite? (y/N) " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "Aborted."
+        exit 0
+    fi
+    rm -rf "$SKILL_DIR"
+fi
+
+# Create the skill directory
+mkdir -p "$SKILL_DIR"
+
+# Copy all skill files (everything except setup, README, .git, examples)
+echo "Installing skill files..."
+for item in SKILL.md brainstorming_guide.md author_profile writing_checklists section_rhetorical_moves; do
+    if [ -e "$SCRIPT_DIR/$item" ]; then
+        cp -r "$SCRIPT_DIR/$item" "$SKILL_DIR/$item"
+    fi
+done
+
+# Copy examples separately (students need the templates)
+mkdir -p "$SKILL_DIR/examples"
+cp -r "$SCRIPT_DIR/examples/"* "$SKILL_DIR/examples/"
+
+echo ""
+echo "Installed to $SKILL_DIR"
+echo ""
+echo "The skill is ready to use with Prof. Gupta's writing rules."
+echo ""
+echo "To use: open Claude Code in any project directory and type /paper-writing"
+echo ""
+echo "To start a new paper:"
+echo "  1. cd into your paper's directory"
+echo "  2. Open Claude Code"
+echo "  3. Type /paper-writing"
+echo "  4. Claude will walk you through creating a project_context.md"
+echo ""
+echo "To customize the voice rules for your own style:"
+echo "  Edit files in $SKILL_DIR/author_profile/"
+echo "  See the README for what to change in each file."
