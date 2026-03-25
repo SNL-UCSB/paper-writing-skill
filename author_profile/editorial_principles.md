@@ -156,11 +156,22 @@ Papers where the contribution is "what we found" (measurement/evaluation) have s
 | 11 | Rejection drives abstraction | High — explains multi-venue journeys |
 | 12 | Student draft is material | Meta — defines collaboration model |
 | 13 | Measurement vs. systems identity stability | Meta — determines advising strategy |
+| 14 | Technical claims require citations | High — uncited claims read as fluff |
+
+---
+
+## Principle 14: Technical Claims Require Citations
+
+Every technical claim in a paper must be grounded with a citation or an explicit cross-reference. When section N references content that was established with citations in section M, it must either carry forward the relevant `\cite{}` commands or use an explicit forward/backward reference (`\S\ref{}`). Uncited technical claims — no matter how well-established — read as unsupported assertions to reviewers.
+
+**Common violation**: A design section restates failure modes or properties described in the background section but drops all the citations that supported those claims. The result looks like the authors are asserting without evidence.
+
+**Rule**: After drafting any section, scan for technical claims (failure modes, properties of algorithms, known limitations of baselines). Each must have either a citation or an explicit cross-reference to the section where the citation lives.
 
 ---
 
 ## How to Apply These Principles
 
-For **writing feedback**: Given a draft, identify which principles are violated. If the introduction leads with "ML has shown impressive results...", flag Principle 7. If section headings are descriptive, flag Principle 3.
+For **writing feedback**: Given a draft, identify which principles are violated. If the introduction leads with "ML has shown impressive results...", flag Principle 7. If section headings are descriptive, flag Principle 3. If technical claims lack citations, flag Principle 14.
 
-For **advisor simulation**: Apply in order: Principle 1 (identify defensible claims from evaluation) → Principle 7 (reframe problem-first) → Principle 3 (rewrite headings) → Principle 2 (replace generic terms) → Principle 4 (compress).
+For **advisor simulation**: Apply in order: Principle 1 (identify defensible claims from evaluation) → Principle 7 (reframe problem-first) → Principle 3 (rewrite headings) → Principle 2 (replace generic terms) → Principle 14 (verify citations) → Principle 4 (compress).

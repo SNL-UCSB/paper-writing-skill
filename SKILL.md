@@ -93,9 +93,29 @@ These are extracted from the detailed files above. In case of conflict, the file
 
 ---
 
+## Mandatory Style Audit (GATE — applies to ALL tex edits)
+
+**Before presenting or committing ANY new or modified tex content, Claude MUST run a sentence-level style audit.** This is not optional, not triggered by the user, and not limited to full section drafts — it applies to every edit, including paragraph-level changes, subsection additions, and overview rewrites.
+
+The audit checks every changed sentence against `author_profile/voice_profile.md` and `author_profile/compression_patterns.md`. Specifically, scan for and fix:
+
+1. **Negation-first constructions**: "not X" or "rather than X" where the sentence should assert what something IS. Reframe positively.
+2. **Throat-clearing**: "We address this problem by", "To address this issue", "In order to", "It should be noted that", "Note that". Delete and lead with the action.
+3. **Hedging**: "can potentially", "can be expected to", "may help reduce", "it is possible that". Replace with assertive voice ("produces", "reduces", "achieves").
+4. **Generic adjectives**: "significant", "substantial", "highly desirable", "novel", "robust", "comprehensive". Replace with specific numbers or delete.
+5. **Sentence length**: Flag any sentence exceeding 40 words. Split or compress.
+6. **Passive voice for claims**: "accuracy was achieved by X" → "X achieves". Passive is acceptable only for methodology ("experiments were conducted").
+7. **Missing citations**: Technical claims restated from other sections must carry forward their citations (Principle 14).
+
+**Process**: After writing, read the changed text line by line. Fix all violations. Report a summary table of violations found and fixed (category, count). Only then present the draft or commit.
+
+This gate is SEPARATE from and IN ADDITION TO the structural section checklists below.
+
+---
+
 ## Section Checklists
 
-After generating ANY section draft, Claude MUST read the corresponding checklist and run it:
+After generating ANY section draft, Claude MUST also read the corresponding structural checklist and run it:
 
 | Section | Checklist file |
 |---|---|
