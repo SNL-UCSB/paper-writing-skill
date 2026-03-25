@@ -131,6 +131,8 @@ Every paper goes through these stages in order. Claude identifies which stage th
 
 After brainstorming, generate a `project_context.md` file using the template in `examples/project_context.md` and save it in the paper's working directory. See `examples/netburst_project_context.md` for a real example.
 
+**Important:** After creating `project_context.md`, add it to the project's `.gitignore` (create the file if it doesn't exist). This file contains strategic framing notes and advisor commentary that should not be committed to shared repositories by default.
+
 ### Stage 2: Architecture
 
 **Gate**: Section outline with claim assignments, per-section narrative arcs, figure/table plan, evaluation structure, and page budget. The evaluation plan must exist BEFORE the introduction is written.
