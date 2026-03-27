@@ -6,13 +6,17 @@ These 13 principles are distilled from systematic analysis of multiple paper rev
 
 ---
 
-## Principle 1: Evaluation-First, Introduction-Last
+## Principle 1: Introduction-Twice (Draft 0 → Evaluation → Final Introduction)
 
-Write the evaluation before the introduction. The introduction promises what the paper delivers — writing it first risks overcommitting to claims the evidence can't support. The evaluation determines what claims are defensible; the introduction should promise exactly those and no more.
+The introduction is written twice. **Draft 0** is a framing scaffold — stakes, problem gap, rough contribution claims — written early to set guardrails for the evaluation. It clarifies thinking and establishes what the paper is *trying* to show. Draft 0 is explicitly disposable; it probably will not survive. **The final introduction** is written after the evaluation is complete, constrained by what the evidence actually supports. Each claim in the final introduction must map to a specific evaluation subsection.
 
-**Observed consequence of violation**: Papers whose introductions were written before evaluation completion frequently promised capabilities (e.g., "domain adaptation," "cross-domain generality") that the evaluation couldn't deliver. These papers were rejected.
+The key insight: writing is a thinking tool, not just a communication tool. A preliminary introduction forces the student to externalize their framing *before* designing experiments. Without Draft 0's guardrails, the evaluation is written without constraints — the student doesn't know what they're trying to show. But without evaluation-constrained rewriting, the introduction promises what the student *hoped* to show rather than what they *did* show.
 
-**Rule**: The final introduction should be written AFTER the evaluation is complete. Each introduction claim must map to a specific evaluation subsection.
+**Observed consequence of skipping Draft 0**: Students who went straight to evaluation without framing guardrails produced evaluations that were technically complete but narratively incoherent — the experiments didn't build toward a unified argument because there was no argument to build toward.
+
+**Observed consequence of skipping the rewrite**: Papers whose Draft 0 introduction survived to submission frequently promised capabilities (e.g., "domain adaptation," "cross-domain generality") that the evaluation couldn't deliver. These papers were rejected.
+
+**Rule**: Write a Draft 0 introduction early (stakes, problem gap, rough contributions) to set evaluation guardrails. Write the final introduction AFTER the evaluation is complete, from scratch. Draft 0 is scaffolding, not a starting point for editing.
 
 ---
 
@@ -143,7 +147,7 @@ Papers where the contribution is "what we found" (measurement/evaluation) have s
 
 | # | Principle | Impact |
 |---|-----------|--------|
-| 1 | Evaluation-first, introduction-last | High — prevents overcommitment |
+| 1 | Introduction-twice (Draft 0 → Evaluation → Final intro) | High — prevents both frameless evaluation and overcommitment |
 | 2 | Named over vague | High — precision correlates with acceptance |
 | 3 | What → Why → So-What headings | High — enables skim-reading |
 | 4 | Compress after expanding | Medium — improves focus |
@@ -174,4 +178,4 @@ Every technical claim in a paper must be grounded with a citation or an explicit
 
 For **writing feedback**: Given a draft, identify which principles are violated. If the introduction leads with "ML has shown impressive results...", flag Principle 7. If section headings are descriptive, flag Principle 3. If technical claims lack citations, flag Principle 14.
 
-For **advisor simulation**: Apply in order: Principle 1 (identify defensible claims from evaluation) → Principle 7 (reframe problem-first) → Principle 3 (rewrite headings) → Principle 2 (replace generic terms) → Principle 14 (verify citations) → Principle 4 (compress).
+For **advisor simulation**: Apply in order: Principle 1 (check whether the introduction promises match evaluation evidence — if not, rewrite the introduction from scratch) → Principle 7 (reframe problem-first) → Principle 3 (rewrite headings) → Principle 2 (replace generic terms) → Principle 14 (verify citations) → Principle 4 (compress).

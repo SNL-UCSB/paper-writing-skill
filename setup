@@ -11,7 +11,7 @@
 #   Copies the skill into ~/.claude/skills/paper-writing/ so Claude Code
 #   can discover and invoke it when you type /paper-writing.
 #
-# The skill works immediately with Prof. Gupta's writing rules as defaults.
+# The skill works immediately with the SNL lab's writing rules as defaults.
 # To customize, edit the files in author_profile/ — see the README.
 #
 
@@ -54,7 +54,7 @@ cp -r "$SCRIPT_DIR/examples/"* "$SKILL_DIR/examples/"
 echo ""
 echo "Installed to $SKILL_DIR"
 echo ""
-echo "The skill is ready to use with Prof. Gupta's writing rules."
+echo "The skill is ready to use with the SNL lab's writing rules."
 echo ""
 echo "To use: open Claude Code in any project directory and type /paper-writing"
 echo ""

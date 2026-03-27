@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Project context (per-paper, contains strategic framing notes)
+project_context.md
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

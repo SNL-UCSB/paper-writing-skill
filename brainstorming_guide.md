@@ -61,6 +61,8 @@ If a claim has no evidence entry, it's an aspiration, not a contribution. Move i
 
 This is the most important phase. The evaluation determines what claims you can make. Design it before writing a single section.
 
+If you've already been exploring your data using the [data-visualization-skill](https://github.com/SNL-UCSB/data-visualization-skill), the iteration you did there — ingesting, exploring, brainstorming what to show and why — has already shaped your understanding of what the data says. Your `exploration_log.md` captured what the data looked like from multiple angles before you formed hypotheses. Your `braindump.md` forced you to articulate what question each figure answers and what would surprise you. That exploration is the empirical foundation for the claims you design here. Load those artifacts now: the surprises you found during exploration may be more compelling than the results you expected, and the predictions that failed are often where the real contribution lives.
+
 ### 3.1 Experimental Setup
 
 14. **What are your baselines, by name?** Not "prior work" or "state-of-the-art." Specific system names. For each baseline, explain WHY it's the right comparison — what does beating this baseline prove?
@@ -92,9 +94,22 @@ The "what if it fails" column is critical. If an experiment could fail and you h
 
 21. **What venue are you targeting?** What is the page limit, deadline, and review process?
 
-22. **Is this a SYSTEMS paper or a MEASUREMENT/ANALYSIS paper?** Systems papers: the contribution is what you built and what it enables. Measurement papers: the contribution is what you found and what it means. The framing is completely different. Systems papers need more "why this design" arguments. Measurement papers need more "so what" arguments.
+22. **What type of paper is this?** The type constrains the evaluation, the framing, and what reviewers expect. Common types in CS:
+
+    | Type | Contribution is... | Evaluation emphasizes... |
+    |------|-------------------|------------------------|
+    | **Build a new system** | What you built and what it enables | Performance vs. baselines, ablation, deployment feasibility |
+    | **Measure something** | What you found and what it means | Methodology rigor, scale, reproducibility, "so what" arguments |
+    | **Break an existing system** | A vulnerability or failure mode you discovered | Attack feasibility, real-world impact, responsible disclosure |
+    | **Survey / systematize** | A structured synthesis of a field | Coverage, taxonomy quality, actionable gaps identified |
+    | **Critique a field** | Shared flaws across a body of work | Evidence that the flaw is widespread, concrete alternatives |
+    | **Deploy at scale** | Lessons from real-world deployment | Operational metrics, unexpected challenges, generalizability |
+
+    Systems papers need more "why this design" arguments. Measurement papers need more "so what" arguments. If your paper doesn't fit neatly into one type, be explicit about which type reviewers will expect — and take extra care with the narrative so they aren't confused about what kind of contribution they're evaluating.
 
 23. **Read the last 3 accepted papers in your topic area at this venue. What do they have in common?** How long are their evaluations? How many baselines? Do they have systems benchmarks (latency, memory)? Do they have user studies? This calibrates your evaluation ambition.
+
+    If you've run a literature survey using the [literature-survey-skill](https://github.com/SNL-UCSB/literature-survey-skill), your Pass 3+ paper notes already contain **writing craft extractions** for the strongest papers in your corpus — introduction anatomy (six-move formula), evaluation architecture, design section craft, and figure design choices. Load those notes now. The craft patterns you extracted from papers you *read* are the templates for the paper you're about to *write*. This is where reading and writing reinforce each other: the survey skill teaches you to recognize how the best papers in your area communicate; this skill teaches you to reproduce those patterns in your own work.
 
 ### 4.2 Competitive Positioning
 
@@ -155,3 +170,11 @@ Once you've answered these questions, Claude will generate a `project_context.md
 This `project_context.md` becomes the binding contract for all writing sessions. Every time you invoke `/paper-writing`, Claude reads it and holds you to it. If something changes (new results, revised framing, shifted venue), update the context file — don't just tell Claude in conversation.
 
 See `examples/netburst_project_context.md` for what a complete, real project context looks like.
+
+### Then: Write Draft 0 of the Introduction
+
+Before touching the evaluation, write a **Draft 0 introduction** — a disposable framing scaffold covering Stakes, Problem Gap, Key Abstraction (placeholder name is fine), Design Intuition, and rough Contributions. Leave the Results Preview blank (you don't have results yet).
+
+Draft 0 is not the introduction. It is a thinking tool. Writing it forces you to commit your framing to concrete prose, which reveals gaps that bullet points in `project_context.md` hide. It sets guardrails for the evaluation: once you've written "This paper shows that X," you know the evaluation must demonstrate X.
+
+Draft 0 will probably not survive to the final version — and that's the point. The final introduction is rewritten from scratch after the evaluation, constrained by what the evidence actually supports. Draft 0 is reference material for that rewrite, not a starting point for editing.

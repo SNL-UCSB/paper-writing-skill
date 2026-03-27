@@ -38,7 +38,7 @@ Derived from sentence-level analysis of multiple published papers across systems
 
 ### Information density
 - No empty "connector" paragraphs — every paragraph either (a) makes a claim, (b) presents evidence, or (c) synthesizes a takeaway
-- Transitional language is minimal: sections begin with their claim, not with "In this section, we describe..."
+- **Signposting through claims, not placeholders.** Sections may open with a preamble that states the section's conclusion or purpose — "This section shows that event-centric decomposition reduces error 13× by analyzing three failure modes." What is banned is *content-free* preambles — "In this section, we describe our evaluation setup" — which delay the claim without guiding the reader. The test: does the opening sentence tell a skim-reader what the section *concludes*, or only what it *contains*?
 - Quantitative data density in evaluation: one number per clause, pattern per paragraph, takeaway per experiment cluster
 
 ---

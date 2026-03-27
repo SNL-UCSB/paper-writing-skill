@@ -34,6 +34,8 @@ The evaluation is where the paper earns its claims. Student drafts typically use
 
 **Why it matters**: Honest disaggregation actually STRENGTHENS the paper by showing nuanced understanding. Reviewers trust authors who acknowledge their system doesn't uniformly excel.
 
+**Connection to data exploration**: If you used the [data-visualization-skill](https://github.com/SNL-UCSB/data-visualization-skill), the Explore phase already forced you to look at your data from multiple angles before forming hypotheses. The surprises you found — distributions that weren't what you expected, subgroups that behaved differently, outliers you couldn't explain — are the raw material for the Deep Dive. The predictions you wrote in `braindump.md` and then confronted in the Analyze phase tell you exactly where your system's behavior diverges from expectation. That divergence is the Deep Dive.
+
 ---
 
 ## Move 4: Takeaway Synthesis
@@ -45,6 +47,8 @@ The evaluation is where the paper earns its claims. Student drafts typically use
 **This is the most important advisor convention.** It is absent from all student drafts and present in all accepted papers. The Takeaway is where the author controls the reader's interpretation.
 
 **Test**: Is the Takeaway interpretable without reading the detailed results? Does it tie back to a contribution?
+
+**From WALTER to Takeaway**: If you've run the [data-visualization-skill](https://github.com/SNL-UCSB/data-visualization-skill)'s Analyze phase, each figure already has a WALTER narration — Hypothesis, Axes, Look here, Trend, Exception, Result. The **R** (Result) of a WALTER narration is a first draft of the Takeaway paragraph for that experiment cluster. The WALTER forces you to articulate what the figure means *before* you write about it in the paper. Load your WALTER narrations when writing Takeaways — they've already done the interpretive work.
 
 ---
 
@@ -100,3 +104,11 @@ Rate your evaluation:
 | 4 | Systems narrative | Labeled paragraphs + Takeaways + claim-first headings |
 
 Target: Level 4.
+
+---
+
+## Learning Evaluation Craft from Papers You Read
+
+The six-move sequence tells you what an evaluation must accomplish. To learn *how* the best authors in your area accomplish it, analyze the evaluation sections of 2–3 strong papers at your target venue during deep reading (Pass 3+ in the [literature-survey-skill](https://github.com/SNL-UCSB/literature-survey-skill)). Extract: How do they structure Setup Anchoring — one paragraph or a full subsection? How many baselines do they name, and how do they justify each? Where do Takeaway paragraphs appear — after every experiment, or only after clusters? How do they handle ablation — separate section or integrated? What does their evaluation's heading structure look like — claim-first or descriptive?
+
+The evaluation architecture of the best-accepted paper at your venue is a more reliable guide than any generic template. If three NSDI papers all use labeled Takeaway paragraphs after each experiment cluster, that's the convention — match it.
