@@ -267,7 +267,7 @@ Always edit files in this repo directory, not directly in `~/.claude/skills/`. R
 | Gupta, [*Systems for Agents, Agents for Systems*](https://sites.cs.ucsb.edu/~arpitgupta/blog/systems-for-agents-agents-for-systems.html) (2025) | Compress the operational middle, protect judgment | Design philosophy, skill series rationale |
 | Gupta, [*A First-Principles Approach to Networked Systems*](https://sites.cs.ucsb.edu/~arpitgupta/first-principles-networking/) | Structural analysis, invariant questions | Brainstorming Phase 1 (structural vs. quantitative gaps) |
 | Winter, [*Research Power Tools*](https://research-power-tools.com/) (2023) | LaTeX paragraph-purpose comments as scaffolding; chained feedback; pre-submission mechanical checks; paper type taxonomy | Stage 3 scaffolding technique, feedback management, pre-submission checklist, brainstorming Phase 4 |
-| Kurose, introduction-writing guide | Introduction structure conventions for CS papers | Six-move introduction sequence |
+| Kurose, [*Writing the Introduction*](https://www.cs.columbia.edu/~hgs/etc/intro-style.html) | Introduction structure conventions for CS papers | Six-move introduction sequence |
 | Strunk & White, *The Elements of Style* | "Omit needless words"; sentence efficiency | Voice profile, compression patterns |
 | Zinsser, *On Writing Well* | Writing as thinking; clarity through revision | Writing-as-thinking principle, Draft 0 rationale |
 | [literature-survey-skill](https://github.com/SNL-UCSB/literature-survey-skill) | Writing craft extraction, six-move introduction formula | Section rhetorical moves, cross-skill reinforcement |
