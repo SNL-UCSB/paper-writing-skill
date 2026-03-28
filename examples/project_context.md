@@ -83,10 +83,31 @@
 
 ## Key Figures Needed
 
-<!-- List every figure/table the paper needs, with what it should show. -->
+<!-- Classify each figure as DATA or NON-DATA. -->
+<!-- DATA figures (CDFs, scatter plots, bar charts, heatmaps) → /viz skill. -->
+<!-- NON-DATA figures (architecture, pipeline, concept diagrams) → /paper-writing figure synthesis. -->
+<!-- The boundary: if it requires experimental data to render, it's DATA. -->
+<!-- If it illustrates structure, flow, or concepts, it's NON-DATA. -->
 
-1. [...]
-2. [...]
+### Non-Data Figures (architecture, pipeline, concept diagrams)
+
+<!-- For each: name, section, archetype, what it shows, which claim it supports. -->
+<!-- Archetypes: architecture_overview | pipeline_flow | component_detail | -->
+<!-- concept_illustration | comparison_schematic | taxonomy | deployment_diagram -->
+
+1. **[Figure name]** — §[section]
+   - **Archetype:** [archetype]
+   - **Shows:** [what the reader should understand]
+   - **Claim supported:** [which contribution claim]
+
+### Data Figures (plots from experimental results)
+
+<!-- For each: name, section, data source, what it shows. -->
+<!-- These go through /viz — brainstorm → plan → execute → analyze. -->
+
+1. **[Figure name]** — §[section]
+   - **Shows:** [what the reader should understand]
+   - **Data source:** [which dataset/experiment]
 
 ## Timeline
 

@@ -41,7 +41,7 @@ mkdir -p "$SKILL_DIR"
 
 # Copy all skill files (everything except setup, README, .git, examples)
 echo "Installing skill files..."
-for item in SKILL.md brainstorming_guide.md author_profile writing_checklists section_rhetorical_moves; do
+for item in SKILL.md brainstorming_guide.md figure_synthesis_guide.md author_profile writing_checklists section_rhetorical_moves figure_templates; do
     if [ -e "$SCRIPT_DIR/$item" ]; then
         cp -r "$SCRIPT_DIR/$item" "$SKILL_DIR/$item"
     fi

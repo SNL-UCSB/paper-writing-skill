@@ -23,8 +23,7 @@ Derived from sentence-level analysis of multiple published papers across systems
 - Avoids first-person hedging: rarely "We believe" or "We think" — prefers "We show" or "This confirms"
 - Zero exclamation marks in final versions
 - Minimal use of "However" as a paragraph opener (used for gap transitions, never as filler)
-- Active voice for claims: "System X achieves" not "accuracy was achieved by System X"
-- Passive voice reserved for methodology: "Experiments were conducted on..." / "Data was collected from..."
+- Active voice everywhere — no exceptions. "System X achieves" not "accuracy was achieved by System X." "We evaluate on dataset X" not "Experiments were conducted on dataset X." "We collected data from campus gateway" not "Data was collected from campus gateway." Passive voice is never the right choice — it obscures agency and weakens prose.
 
 ---
 

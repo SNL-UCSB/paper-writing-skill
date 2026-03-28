@@ -92,7 +92,7 @@ These are extracted from the detailed files above. In case of conflict, the file
 - Mean sentence length: ~21 words. Maximum: ~40 words (contribution lists only).
 - Topic sentences assert claims. Never open a paragraph with background or context.
 - Zero hedging. "We show" not "We believe." "X reduces Y by 13×" not "X may help reduce Y."
-- Active voice for claims. Passive only for methodology.
+- Active voice everywhere — no exceptions. Passive voice obscures agency and weakens prose.
 - No filler adjectives: never use "novel," "significant," "state-of-the-art," "comprehensive," "robust," "substantial," "promising," "impressive." Replace with specific numbers or delete.
 - Signpost through claims: section openers may state the section's conclusion ("This section shows that X reduces Y by 13×") but never use content-free placeholders ("In this section, we describe..."). The test: does the opener tell a skim-reader what the section *concludes*?
 - No exclamation marks. No rhetorical questions outside introductions.
@@ -122,7 +122,7 @@ The audit checks every changed sentence against `author_profile/voice_profile.md
 3. **Hedging**: "can potentially", "can be expected to", "may help reduce", "it is possible that". Replace with assertive voice ("produces", "reduces", "achieves").
 4. **Generic adjectives**: "significant", "substantial", "highly desirable", "novel", "robust", "comprehensive". Replace with specific numbers or delete.
 5. **Sentence length**: Flag any sentence exceeding 40 words. Split or compress.
-6. **Passive voice for claims**: "accuracy was achieved by X" → "X achieves". Passive is acceptable only for methodology ("experiments were conducted").
+6. **Passive voice**: "accuracy was achieved by X" → "X achieves". "Experiments were conducted on X" → "We evaluate on X". Active voice everywhere — no exceptions.
 7. **Missing citations**: Technical claims restated from other sections must carry forward their citations (Principle 14).
 
 **Process**: After writing, read the changed text line by line. Fix all violations. Report a summary table of violations found and fixed (category, count). Only then present the draft or commit.
@@ -184,6 +184,8 @@ Output a structured table:
 | Section | Pages | Key claim | Figures/Tables |
 |---------|-------|-----------|----------------|
 | ... | ... | ... | ... |
+
+**Non-data figure specs**: For each figure in the plan that is NOT a data figure (architecture diagrams, pipeline illustrations, concept diagrams, comparison schematics), read `figure_synthesis_guide.md` and run spec mode to produce a `figure_spec.md`. Data figures (CDFs, bar charts, heatmaps, scatter plots) should be routed to the [data-visualization-skill](https://github.com/SNL-UCSB/data-visualization-skill). The boundary is clear: if the figure requires experimental data to render, it goes through `/viz`; if it illustrates structure, flow, or concepts, it goes through figure synthesis.
 
 ### Stage 3: Section Drafts
 
@@ -345,3 +347,13 @@ Fix what can be fixed automatically (e.g., adding `~` before `\cite`). Flag what
 3. Emphasize: the brainstorming phase is the most important. A precise project context saves weeks of revision later.
 4. After brainstorming: write a **Draft 0 introduction** — a disposable framing scaffold (stakes, problem gap, rough contributions) that sets guardrails for the evaluation. Then point them to `section_rhetorical_moves/evaluation.md` — they'll write the evaluation next, constrained by Draft 0.
 5. Remind them: "Your first draft should be comprehensive — include everything. Compression comes later. The goal is to get material on paper, not to be concise. Draft 0 of the introduction will probably not survive — that's the point. It clarifies your thinking."
+
+### "I need a non-data figure (architecture diagram, pipeline illustration, etc.)"
+1. Load the paper's `project_context.md`
+2. Read `figure_synthesis_guide.md` and the relevant files in `figure_templates/`
+3. Classify the figure by archetype (architecture overview, pipeline flow, component detail, concept illustration, comparison schematic, taxonomy, deployment diagram)
+4. Select the generation backend: AI image generation (for visually rich figures like architecture overviews and concept illustrations) or TikZ (for precise structural figures like pipeline flows and taxonomy matrices). The guide has defaults per archetype, but the student can override.
+5. Run spec mode — walk through archetype-specific questions to produce a `figure_spec.md`
+6. Run generate mode — assemble an AI prompt or TikZ code, produce the figure
+7. Run critique mode — check against claims, venue formatting, and design principles
+8. **NOTE**: Data figures (CDFs, scatter plots, bar charts, heatmaps) should go through `/viz`, not through figure synthesis

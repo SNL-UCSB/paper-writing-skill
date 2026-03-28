@@ -1,38 +1,37 @@
 # paper-writing-skill
 
-PhD students know what they found. Turning that into a paper that gets accepted is where they stall. The problem isn't writing ability — it's operational friction. Structuring sections, maintaining cross-section coherence, compressing to page limits, matching voice conventions, responding to reviewers: students spend weeks on scaffolding that an experienced advisor could sketch in an afternoon.
+PhD students know what they found. Turning that into a paper that gets accepted is where they stall. The problem isn't writing ability — it's operational friction. Structuring sections, maintaining cross-section coherence, compressing to page limits, matching voice conventions, synthesizing figures, responding to reviewers: students spend weeks on scaffolding that an experienced advisor could sketch in an afternoon.
 
-This skill offloads that scaffolding to the machine. It encodes 14 editorial principles, section-specific rhetorical move sequences, and a five-stage writing pipeline. All were extracted from [forensic analysis](https://sites.cs.ucsb.edu/~arpitgupta/blog/the-paper-behind-the-paper.html) of 6 papers, 8 submissions, 7,600+ Overleaf edits, 100+ tex file versions, and 5 peer review processes. These are the patterns that empirically distinguished accepted papers from rejected ones in the same research group. The student retains the hard parts: deciding what the paper claims, whether the evidence supports it, and how to position the work. The machine handles drafting mechanics, structural compliance, and revision logistics.
+This skill offloads that scaffolding to the machine. It encodes 14 editorial principles, section-specific rhetorical move sequences, a five-stage writing pipeline, and a figure synthesis workflow for architectural and conceptual diagrams. All were extracted from [forensic analysis](https://sites.cs.ucsb.edu/~arpitgupta/blog/the-paper-behind-the-paper.html) of 6 papers, 8 submissions, 7,600+ Overleaf edits, 100+ tex file versions, and 5 peer review processes. These are the patterns that empirically distinguished accepted papers from rejected ones in the same research group. The student retains the hard parts: deciding what the paper claims, whether the evidence supports it, and how to position the work. The machine handles drafting mechanics, structural compliance, figure generation, and revision logistics.
 
 **Who this is for:** PhD students and researchers writing conference or journal papers. Tuned for systems and networking (SIGCOMM, NSDI, CoNEXT, IMC) and ML venues (NeurIPS, ICLR, ICML). Adaptable to any field — see [Customize for Your Field](#customize-for-your-field).
 
 Built on [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
+## Versions
+
+| Version | What's included | Install |
+|---------|----------------|---------|
+| **v2.x** (current) | Full writing pipeline + figure synthesis for non-data figures (architecture diagrams, pipeline illustrations, concept diagrams) | `./setup` from `main` branch |
+| **v1.x** | Writing pipeline only — editorial rules, brainstorming, rhetorical moves, checklists, compression. No figure synthesis. | `git checkout v1` then `./setup` |
+
+**v2.0 adds:**
+- **Figure synthesis guide** with three modes: spec (structured questioning per figure archetype), generate (AI image prompts or TikZ code), and critique (claim alignment, venue formatting, design principles)
+- **Seven figure archetypes** for systems/networking papers: architecture overview, pipeline flow, component detail, concept illustration, comparison schematic, taxonomy, deployment diagram
+- **Hybrid generation**: AI image generation prompts (for Gemini, DALL-E, or similar) for visually rich figures; TikZ templates for precise structural figures
+- **Venue-specific styling**: column widths, colorblind-safe palettes, font specs, and print safety standards for NSDI, SIGCOMM, IMC, and other ACM/USENIX venues
+- **Passive voice rule update**: active voice everywhere, no exceptions (previously allowed passive for methodology)
+- **Updated NetBurst example**: March 27 structural audit — question-driven evaluation, 29 locked decisions, stale-number corrections
+
+If you don't need figure synthesis, use v1. The writing pipeline is identical in both versions.
+
 ## Why This Skill Exists
 
 Academic research faces a structural squeeze: stagnant funding, rising costs, researchers who must produce more with less. Agentic AI offers a way through — not by replacing researchers, but by compressing the operational middle of the research pipeline. This is the argument laid out in [*Systems for Agents, Agents for Systems*](https://sites.cs.ucsb.edu/~arpitgupta/blog/systems-for-agents-agents-for-systems.html).
 
-Three competencies remain structurally human: **discrimination** (evaluating whether a draft argues what it should), **critique** (recognizing where the argument breaks), and **framing** (deciding what the paper claims and why anyone should care). Everything else — section templates, voice consistency, cross-section coherence, page-limit compression — is plumbing that machines can handle.
+Three competencies remain structurally human: **discrimination** (evaluating whether a draft argues what it should), **critique** (recognizing where the argument breaks), and **framing** (deciding what the paper claims and why anyone should care). Everything else — section templates, voice consistency, cross-section coherence, page-limit compression, figure scaffolding — is plumbing that machines can handle.
 
 The concern that AI writing assistance weakens intellectual muscles gets the causality backwards. This skill forces students to articulate their own arguments at every stage. The brainstorming workflow demands that students name who suffers, what breaks structurally, and what evidence supports each claim *before any prose is generated*. The introduction-twice ordering forces students to confront what their results actually show. The section checklists surface violations that would otherwise survive until peer review. The machine provides scaffolding and enforcement. The student provides discrimination, critique, and framing.
-
-## Part of a Series
-
-This skill is one of a family of Claude Code skills developed at the [Systems and Networking Lab (SNL)](https://github.com/SNL-UCSB) at UC Santa Barbara by [Arpit Gupta](https://sites.cs.ucsb.edu/~arpitgupta/). Each targets a phase of the research pipeline where plumbing buries ingenuity:
-
-| Skill | What it compresses | Student retains |
-|-------|-------------------|-----------------|
-| **[literature-survey-skill](https://github.com/SNL-UCSB/literature-survey-skill)** | Paper ingestion, claim extraction, cross-referencing, landscape mapping | Hypothesis formation, assumption identification, gap recognition, narrative construction |
-| **[data-visualization-skill](https://github.com/SNL-UCSB/data-visualization-skill)** | Plot formatting, code generation, style compliance | Deciding what to show, why it matters, and whether the figure is honest |
-| **[paper-writing-skill](https://github.com/SNL-UCSB/paper-writing-skill)** | Drafting mechanics, structural scaffolding, revision logistics | Argument construction, positioning, voice |
-
-The skills are independent — use any one alone — but they form a closed loop, and the connections between them are the mechanism by which research thinking develops.
-
-**Literature survey → Paper writing.** The survey skill's gap analysis produces the structural limitations that motivate the paper (Brainstorming Phase 1). Its competitive positioning feeds directly into how the paper positions itself against prior work (Phase 4). The survey's Pass 3+ **writing craft extraction** teaches students *how* the best papers in their area communicate: introduction anatomy, evaluation architecture, design section craft. Those extractions become reference material during the Architecture stage and inform what a strong rhetorical move looks like at a specific venue.
-
-**Data visualization → Paper writing.** The viz skill's exploration phase forces students to look at their data from multiple angles *before* forming hypotheses. Surprises and failed predictions reshape what claims are defensible, feeding into Brainstorming Phase 3 (Evaluation Design). The viz skill's `braindump.md` articulates what hypothesis each figure tests — the empirical foundation for the paper's claim-evidence mapping. Its WALTER narrations (Hypothesis → Axes → Look here → Trend → Exception → Result) are first drafts of the Takeaway paragraphs that the evaluation needs. The iteration in the viz skill — exploring, predicting, confronting surprises — *is* the process of figuring out what the paper can honestly claim.
-
-**Paper writing → Literature survey → Data visualization.** The loop closes. A student who has written an evaluation using the six-move sequence reads the next paper's evaluation with sharper eyes. A student who has written a Deep Dive with honest disaggregation approaches their next dataset knowing to look for subgroup differences. Writing sharpens reading, and reading sharpens visualization.
 
 ## Quick Start
 
@@ -60,7 +59,7 @@ You need **Claude Code** installed on your machine. If you don't have it yet:
 
 ### Manual Install
 
-Copy `SKILL.md` to `~/.claude/skills/paper-writing/SKILL.md`. Copy `brainstorming_guide.md`, `author_profile/`, `writing_checklists/`, `section_rhetorical_moves/`, and `examples/` alongside it.
+Copy `SKILL.md` to `~/.claude/skills/paper-writing/SKILL.md`. Copy `brainstorming_guide.md`, `figure_synthesis_guide.md`, `author_profile/`, `writing_checklists/`, `section_rhetorical_moves/`, `figure_templates/`, and `examples/` alongside it.
 
 ## How the Skill Works
 
@@ -71,6 +70,7 @@ When you type `/paper-writing`, Claude loads the editorial rules, checklists, an
 - "Help me write the evaluation section" — Claude generates a draft following the 6-move evaluation sequence, then runs the evaluation checklist and flags violations
 - "Review this introduction" — Claude reads your draft, applies the 7 intervention types in order, and gives numbered feedback with severity levels and concrete rewrites
 - "Compress section 4" — Claude applies 7 compression operations and reports before/after character counts
+- "I need an architecture diagram for the design section" — Claude walks through the figure synthesis spec, generates a prompt or TikZ code, and critiques the result
 - "Help me respond to these reviews" — paste in reviewer comments and Claude classifies each concern and drafts responses
 - "I have a new paper idea about X" — Claude runs the full brainstorming workflow to create a fresh project context
 
@@ -80,7 +80,7 @@ Every paper goes through these stages in order:
 
 **Stage 1 — Structured Brainstorming.** The skill's centerpiece. Claude walks you through 34 questions across 6 phases: Problem Discovery, Contribution Crystallization, Evaluation Design, Positioning and Framing, Architecture and Constraints, and Narrative Spine. Each phase forces externalization — vague intuitions become concrete, falsifiable statements. The output is a `project_context.md` that serves as the binding contract for all subsequent writing sessions.
 
-**Stage 2 — Architecture.** Section outline with claim assignments, per-section narrative arcs, figure/table plan, and page budget. The evaluation plan must exist before the introduction is outlined.
+**Stage 2 — Architecture.** Section outline with claim assignments, per-section narrative arcs, figure/table plan, and page budget. The evaluation plan must exist before the introduction is outlined. Non-data figures (architecture diagrams, pipeline illustrations, concept diagrams) are routed to the figure synthesis workflow; data figures (plots from experimental results) are handled separately.
 
 **Stage 3 — Section Drafts.** Enforced order: Draft 0 Introduction → Evaluation → Design → Background → Related Work → Final Introduction → Abstract. The introduction is written *twice* ([see below](#the-writing-order--introduction-twice)). Topic sentences are written first and verified as a coherent argument before full prose. After each draft, the section checklist runs and flags violations by severity (CRITICAL / MAJOR / MINOR).
 
@@ -99,6 +99,36 @@ The introduction is written **twice**. This is the single most impactful princip
 **The final introduction** is rewritten from scratch after the evaluation is complete. It promises exactly what the evidence supports. Draft 0 is reference material for the rewrite, not a starting point for editing.
 
 In our corpus, papers with stable framing — where the introduction was rewritten to match the evaluation — were accepted. Papers where Draft 0's promises survived unchecked to submission had framing problems that led to rejection.
+
+## Figure Synthesis (v2.0)
+
+The skill includes a figure synthesis workflow for **non-data figures** — architecture diagrams, pipeline illustrations, concept diagrams, comparison schematics, and other conceptual figures that don't require experimental data to render.
+
+### Three Modes
+
+**Spec** (`/paper-writing figure spec`). Reads `project_context.md`, classifies each planned figure by archetype, and walks through archetype-specific questions to produce a structured `figure_spec.md`. The spec captures components, connections, groupings, layout, color mapping, and a draft caption.
+
+**Generate** (`/paper-writing figure generate`). Routes to the appropriate backend based on archetype:
+- **AI image generation** (architecture overviews, concept illustrations, comparison schematics, deployment diagrams): assembles a detailed prompt with venue-appropriate styling that the student can paste into Gemini, DALL-E, or another image generation tool. If a Gemini API key is available, Claude generates the image directly.
+- **TikZ** (pipeline flows, component details, taxonomy/classification figures): customizes a starter template into compilable LaTeX code that integrates directly with the paper.
+
+**Critique** (`/paper-writing figure critique`). Reviews the generated figure against five checks: claim alignment (does it support the specified claim?), completeness (all components present?), venue formatting (column widths, font sizes, print safety), design principles (data-ink ratio, self-containment, consistency with other figures), and caption quality (interpretive, claim-first).
+
+### Seven Archetypes
+
+| Archetype | What it shows | Default backend |
+|-----------|--------------|-----------------|
+| Architecture Overview | Full system pipeline, end-to-end flow | AI image generation |
+| Pipeline / Process Flow | Sequential data transformation | TikZ |
+| Component Detail | Internal structure of one stage | TikZ |
+| Concept Illustration | Abstract concept made concrete | AI image generation |
+| Comparison Schematic | Why approach A fails, approach B works | AI image generation |
+| Taxonomy / Classification | Hierarchical or matrix categorization | TikZ |
+| Deployment / System Diagram | Infrastructure topology | AI image generation |
+
+### Venue Styling
+
+Figure templates include styling defaults for NSDI, SIGCOMM, IMC, and other ACM/USENIX venues: column widths, the Paul Tol colorblind-safe palette, font size minimums, line weights, and a print safety checklist. Every figure is checked for grayscale readability, text legibility at print size, and proper aspect ratio.
 
 ## Intellectual Foundations
 
@@ -148,7 +178,7 @@ The taxonomy serves two purposes. First, it structures the skill's draft review 
 
 **Empirical over theoretical.** Every principle comes from observed revision patterns, not prescriptive writing advice. The evidence is in the edit histories.
 
-**Shunt the plumbing, protect the thinking.** The machine handles section scaffolding, voice enforcement, checklist compliance, and compression mechanics. The student handles argument construction, competitive positioning, and honest self-assessment.
+**Shunt the plumbing, protect the thinking.** The machine handles section scaffolding, voice enforcement, checklist compliance, figure generation, and compression mechanics. The student handles argument construction, competitive positioning, and honest self-assessment.
 
 **Introduction-twice, always.** Draft 0 sets framing guardrails before the evaluation; the final version is rewritten from scratch afterward, constrained by what the evidence supports.
 
@@ -158,12 +188,15 @@ The taxonomy serves two purposes. First, it structures the skill's draft review 
 
 **The student draft is material, not the paper.** The student's comprehensive first draft is raw material for restructuring and compression — never discarded, always restructured to serve the argument.
 
+**Figures serve claims.** Every figure must answer a specific research question and be interpreted in prose — not just cited. Non-data figures are specified during brainstorming, generated during the architecture stage, and critiqued during integration.
+
 ## What's in This Repo
 
 ```
 paper-writing-skill/
 ├── SKILL.md                              # Main skill file (Claude reads this)
 ├── brainstorming_guide.md                # 34 questions across 6 phases
+├── figure_synthesis_guide.md             # Non-data figure workflow (spec/generate/critique)
 ├── setup                                 # One-command installer
 ├── README.md                             # You are here
 ├── author_profile/                       # Editorial rules (defaults, customizable)
@@ -182,6 +215,11 @@ paper-writing-skill/
 │   ├── evaluation.md                     # 6-move sequence + evolution stages
 │   ├── design.md                         # 5-move sequence + anti-patterns
 │   └── related_work.md                   # 3-move sequence + placement strategy
+├── figure_templates/                     # Figure synthesis resources (v2.0)
+│   ├── venue_styles.md                   # Column widths, palettes, fonts per venue
+│   ├── prompt_templates.md               # AI image generation prompts per archetype
+│   ├── tikz_skeletons.md                 # TikZ starter templates per archetype
+│   └── figure_spec_template.md           # Per-figure specification template
 └── examples/
     ├── project_context.md                # Template with guided prompts
     └── netburst_project_context.md       # Real example (NetBurst NSDI '27)
@@ -191,7 +229,7 @@ paper-writing-skill/
 
 `editorial_principles.md` contains 14 cross-paper principles ordered by observed impact on acceptance outcomes. Each principle includes evidence from at least two paper revision cycles and a concrete test for violation.
 
-`voice_profile.md` encodes sentence-level style rules: ~21-word mean sentence length, claim-first topic sentences, zero hedging, active voice for claims, banned filler adjectives, paragraph density targets. We derived these from sentence-level analysis comparing student drafts against advisor-edited final versions.
+`voice_profile.md` encodes sentence-level style rules: ~21-word mean sentence length, claim-first topic sentences, zero hedging, active voice everywhere (no exceptions), banned filler adjectives, paragraph density targets. We derived these from sentence-level analysis comparing student drafts against advisor-edited final versions.
 
 `compression_patterns.md` defines 7 compression operations with before/after examples and quantitative benchmarks. `rhetorical_moves.md` summarizes the per-section move sequences. `intervention_types.md` classifies 7 types of advisor interventions for simulating feedback on drafts.
 
@@ -203,13 +241,17 @@ Four post-draft checklists (introduction, evaluation, design, related work) run 
 
 Per-section guides with concrete examples from accepted and rejected papers. Introduction (6 moves: Stakes → Problem Gap → Key Abstraction → Design Intuition → Contributions → Results Preview), Evaluation (6 moves: Setup Anchoring → Head-to-Head → Deep Dive → Takeaway Synthesis → Ablation → Robustness), Design (5 moves), Related Work (3 moves).
 
+### Figure Synthesis Resources (v2.0)
+
+`figure_synthesis_guide.md` defines the three-mode workflow for non-data figures. `figure_templates/` contains venue-specific styling defaults, AI image generation prompt templates for four archetypes, TikZ starter templates for three archetypes, and the per-figure specification template.
+
 ### Use These Materials Without Claude Code
 
-The editorial principles, rhetorical move guides, and checklists work independently of the skill runtime. Print `editorial_principles.md` for a lab writing workshop. Use the section checklists as self-review guides before submitting a draft to your advisor. Use `brainstorming_guide.md` to structure a whiteboard session for a new paper idea.
+The editorial principles, rhetorical move guides, and checklists work independently of the skill runtime. Print `editorial_principles.md` for a lab writing workshop. Use the section checklists as self-review guides before submitting a draft to your advisor. Use `brainstorming_guide.md` to structure a whiteboard session for a new paper idea. The figure synthesis prompt templates can be used directly with any image generation tool.
 
 ## Customize for Your Field
 
-The skill defaults to systems and networking (SIGCOMM, NSDI, CoNEXT, IMC) and ML venues (NeurIPS, ICLR, ICML). Five adaptation points:
+The skill defaults to systems and networking (SIGCOMM, NSDI, CoNEXT, IMC) and ML venues (NeurIPS, ICLR, ICML). Six adaptation points:
 
 **Voice rules.** Edit `author_profile/voice_profile.md` to adjust sentence length targets, hedging policy, and tone. Keep the claim-first and no-filler rules — these are venue-agnostic.
 
@@ -220,6 +262,8 @@ The skill defaults to systems and networking (SIGCOMM, NSDI, CoNEXT, IMC) and ML
 **Venue conventions.** The skill distinguishes systems venues (labeled paragraphs, post-evaluation related work) from ML venues (colon subtitles, integrated related work). Add conventions for your target venues.
 
 **Rhetorical moves.** The move sequences in `section_rhetorical_moves/` come from CS papers. Add examples from your field's best-written work. The functional structure (moves and their dependencies) is domain-agnostic; the examples should be domain-specific.
+
+**Figure styling.** Edit `figure_templates/venue_styles.md` to adjust column widths, color palettes, and font specs for your target venues. The TikZ skeletons and prompt templates can be customized for field-specific figure conventions.
 
 ## For Advisors: Sharing With Your Group
 
@@ -239,6 +283,8 @@ Students don't need to configure anything. The skill produces output consistent 
 **"I want to start over with a paper's context"** — Delete `project_context.md` in your paper's directory and invoke `/paper-writing` again.
 
 **"I updated the repo but Claude is using old rules"** — Run `./setup` again after pulling. The setup script copies files to the skill directory.
+
+**"I want v1 without figure synthesis"** — `git checkout v1` then `./setup`.
 
 ## Updating
 
@@ -262,12 +308,10 @@ Always edit files in this repo directory, not directly in `~/.claude/skills/`. R
 | Kurose, [*Writing the Introduction*](https://www.cs.columbia.edu/~hgs/etc/intro-style.html) | Introduction structure conventions for CS papers | Six-move introduction sequence |
 | Strunk & White, *The Elements of Style* | "Omit needless words"; sentence efficiency | Voice profile, compression patterns |
 | Zinsser, *On Writing Well* | Writing as thinking; clarity through revision | Writing-as-thinking principle, Draft 0 rationale |
-| [literature-survey-skill](https://github.com/SNL-UCSB/literature-survey-skill) | Writing craft extraction, six-move introduction formula | Section rhetorical moves, cross-skill reinforcement |
-| [data-visualization-skill](https://github.com/SNL-UCSB/data-visualization-skill) | WALTER principle, figure narration, visual argument analysis | Evaluation figure planning, figure-claim linkage |
 
 ## Contributing
 
-Contributions welcome. The areas where additions would help most: editorial principles from fields beyond systems and networking, rhetorical move examples from additional venues (SOSP, OSDI, CHI, USENIX Security), example `project_context.md` files from real papers, and domain-specific brainstorming questions for fields where the 34-question sequence needs adaptation.
+Contributions welcome. The areas where additions would help most: editorial principles from fields beyond systems and networking, rhetorical move examples from additional venues (SOSP, OSDI, CHI, USENIX Security), example `project_context.md` files from real papers, domain-specific brainstorming questions for fields where the 34-question sequence needs adaptation, and figure prompt templates for additional archetypes or venues.
 
 ## License
 
