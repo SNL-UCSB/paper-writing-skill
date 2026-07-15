@@ -19,6 +19,9 @@ audit, and BEFORE the text is shown to the user or committed.
    - applies `author_profile/accessibility_checklist.md` (G1–G6) with a FRESH-READER lens: "a venue reader
      who has never seen this paper — flag every undefined term, every claim not tied to the thesis, every
      illogical jump";
+   - applies the `[JUDGE]` and `[MECH]` items of `author_profile/elements_of_style_checklist.md` (the
+     Strunk & White craft layer): passive voice (zero tolerance), needless words, weak/positive form,
+     parallelism, emphatic-end, pompous/vague usage, and White's 21 reminders;
    - hunts the four failure classes explicitly: AI-sounding, inaccessible, incoherent, illogical;
    - REFUSES to pass until clean, returning a findings list (category, line, concrete fix) — not a yes/no.
 

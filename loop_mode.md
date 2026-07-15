@@ -29,6 +29,8 @@ red-team findings. This ledger IS the loop's memory — read it fresh at the sta
 3. Run the three gates on that section (see `red_team_protocol.md`):
    a. MECHANICAL — run ALL `author_profile/de_ai_checklist.md` Part D greps; paste the counts.
    b. ACCESSIBILITY/COHERENCE — apply `author_profile/accessibility_checklist.md` (G1–G6).
+   b2. CRAFT — apply `author_profile/elements_of_style_checklist.md`: run its `[MECH]` grep gate
+       (active voice, needless words, pompous usage, qualifiers) and read for its `[JUDGE]` items.
    c. INDEPENDENT RED-TEAM — spawn a FRESH reviewer (subagent) that did NOT write the text; it returns findings.
 4. FIX every finding in the section's text.
 5. Re-run the gates on the fixed text. Zero surviving findings → mark the section `CLEAN`; else `FINDINGS(n)`.
