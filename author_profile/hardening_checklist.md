@@ -41,6 +41,43 @@ any substantive batch, re-run an **independent** de-AI hunter (not the author) f
 decorative antithesis, editorializing closers, and repeated stock phrases. Never report the
 de-AI pass "done" from a single early grep.
 
+### A4. Cross-section term-map + decomposition consistency (catch drift AT synthesis, not after)
+The failure mode: the same load-bearing entity, a named abstraction, a fixed set of
+axes/concerns/stages/requirements, a fixed cast of subsystems, gets **renamed or re-counted** as
+it travels abstract → intro → background → design, because each section is drafted or refined in
+isolation and no single source of truth is enforced. A1 catches ordinary synonym drift; A4
+catches drift in the paper's *structural vocabulary and decompositions*, which a reviewer reads
+as "is this even the same system?" This creeps in precisely at **synthesis time** (sections
+written by different passes/agents/days) and survives a per-section audit that never diffs across
+sections. Two artifacts and three checks:
+
+1. **Term-map (a glossary in `project_context.md`).** Before synthesis, list every load-bearing
+   concept and its ONE canonical name: the abstraction, each axis/concern, each subsystem *and
+   the concern it owns*, the contract, and key numbers (as macros). Row form:
+   `application axis (NetGent) -> "application workflow" (never "behavior"/"interactions"/"endpoint workflow")`.
+   When drafting a section, pull names FROM the term-map, never from memory or the sibling
+   section you happen to recall.
+2. **Locked source of truth.** Designate one section (usually the finalized introduction) or the
+   term-map itself as canonical; every other section conforms TO it, never the reverse. When a
+   term diverges, the non-canonical section changes.
+3. **Decomposition invariance.** Whenever the paper breaks something into parts (N stages, N
+   concerns, N axes, N requirements, a cast of systems), every section that lists them must use
+   the **same members, the same count, and the same names**. A "four stages" list here and a
+   "three concerns" list for the *same* decomposition there is a defect; check member-set
+   equality and cardinality across sections, not just individual word choice.
+
+Run it **implicitly after any multi-section batch** (not once at the end):
+```bash
+# (a) One name per concept: for each canonical term, show every surface form + location.
+for t in "application workflow" "application behavior" "endpoint behavior" "bottleneck conditions" "network conditions"; do
+  echo "== $t =="; grep -rn "$t" sections/*.tex | grep -v '^\s*%'; done
+# (b) Decomposition cardinality: do all the "N <noun>" counts agree across sections?
+grep -rnoE "\b(three|four|five|six|seven)\b (stages|concerns|axes|requirements|dimensions|systems)" sections/*.tex
+# (c) Numbers: every shared figure comes from a macro, so numeric drift is impossible by construction.
+```
+Report the surface-form table and any count mismatch; converge each cluster to the term-map
+before marking the section clean.
+
 ---
 
 ## Part B — Accessibility, calibrated (and its tension with de-AI)
