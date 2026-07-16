@@ -79,6 +79,25 @@ Impressive-sounding metaphors with no operational content: `the machine that run
 - ✗ `intent bloat that keeps intents from transferring`
 - ✓ `intent bloat that widens the ideation-to-data-generation gap`
 
+### A12. Fancy, showy, or figurative verbs — prefer the plain word (AUDIT)
+When a plain, common verb exists, a colorful or literary one reads as authorial performance
+(↔ Elements of Style R14 "avoid fancy words", R21 "prefer the standard to the offbeat"). Replace
+the fancy verb with the ordinary one. Keep the fancy verb ONLY when it is precise domain jargon
+with no plain equivalent (e.g., `amortize` a cost, `traverse` a graph, `spawn` a process). This
+is distinct from A4 (which bans hype adjectives) and Part B.2 (Latinate → Anglo-Saxon); A12
+targets verbs chosen for flavor.
+Common offenders → plain swap:
+- `pit (X against Y)` → `run X against Y` · `dispatch` → `send` · `chip (away) at` → `narrow` /
+  `reduce` · `bind` (as "constrain harder") → `tighten` · `anew` / `afresh` → `again`
+- `marshal` → `gather` · `orchestrate` → `coordinate` / `run` · `wrangle` → `manage` ·
+  `harness` → `use` · `forge` → `build` · `weave` → `combine` · `usher in` → `start` / `bring`
+- `delve into` → `examine` · `grapple with` → `address` · `surface` (v.) → `reveal` / `show` ·
+  `unpack` (figurative) → `explain` · `leverage` → `use` (also A4)
+- ✗ `no single tool can pit a real Meet call against a bulk download`
+- ✓ `no single tool can run a real Meet call against a bulk download`
+Polysemous words (`bind`, `surface`, `run`, `chip`) are JUDGE-only — read for the flavor sense;
+do not blanket-replace, since the plain sense is usually fine.
+
 ---
 
 ## Part B — The Shenker register (what to write INSTEAD)
@@ -125,7 +144,9 @@ grep -rnoE "set(s)? .* apart|no (predecessor|one) .* (made|posed)|the key (insig
 grep -rnE "^(Moreover|Furthermore|Additionally|Notably|Importantly|Indeed|Ultimately|Crucially)" sections/*.tex
 # 4. Banned adjectives
 grep -rnoE "\bnovel\b|\bsignificant\b|\bsubstantial\b|\bseamless|\bpowerful\b|\brobust\b|\bcomprehensive\b|\bcrucial\b" sections/*.tex
-# 5. Sentence length (flag > 40 words), and section titles on one line
+# 5. Fancy / figurative verbs (A12; inspect each — keep only precise domain jargon like "amortize")
+grep -rnoiE "\b(pit(s|ted|ting)?|dispatch(es|ed|ing)?|chip(s|ped|ping)? (away )?at|marshal(s|led|ling)?|orchestrat(e|es|ed|ing)|wrangl(e|es|ed|ing)|harness(es|ed|ing)?|forge[sd]?|weav(e|es|ed|ing)|delv(e|es|ed|ing) into|usher(s|ed)? in|grappl(e|es|ed|ing) with|anew|afresh)\b" sections/*.tex
+# 6. Sentence length (flag > 40 words), and section titles on one line
 ```
 Every hit is either fixed or explicitly justified (Part A2 exception) before reporting done.
 Report the grep counts in the audit summary, not just "audited."
