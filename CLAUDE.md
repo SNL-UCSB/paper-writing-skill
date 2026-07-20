@@ -22,9 +22,13 @@ This copies skill files into `~/.claude/skills/paper-writing/`. Always edit file
 - The mandatory style audit gate (runs on every tex edit)
 - Section checklist and rhetorical move dispatch tables
 
-**author_profile/** contains the editorial rules (source of truth for all style enforcement):
+**author_profile/** contains the editorial rules (source of truth for all style enforcement). The
+style layer is organized into three files by mechanism — one mechanical gate, one semantic gate,
+one positive craft reference:
 - `editorial_principles.md` — 14 cross-paper principles with evidence from forensic revision analysis
-- `voice_profile.md` — sentence-level style rules (~21-word mean, zero hedging, claim-first, banned words)
+- `craft_reference.md` — how to write (the positive layer): sentence-level style (~21-word mean, claim-first, active voice, named-over-vague) and three registers (base/terse, conceptual/position, warm/narrative)
+- `gate_mechanical.md` — the single greppable style gate (M1–M18): em-dashes, antithesis, intensifiers, banned/pompous/fancy words, passive voice, wordiness, term-drift — one grep script
+- `gate_semantic.md` — the single reader-judgment gate (S1–S31): define-before-use, followability, coherence/consistency, rigor/grounding, honest positioning, figures, closure gate
 - `compression_patterns.md` — 7 compression operations with before/after examples
 - `rhetorical_moves.md` — cross-section move sequences
 - `intervention_types.md` — 7 advisor intervention types for draft review

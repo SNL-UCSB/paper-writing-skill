@@ -144,7 +144,7 @@ Read `figure_templates/figure_spec_template.md`. Fill in every field from the st
 5. **Styling section**: assign colors from the Paul Tol palette based on semantic roles. Note which component gets emphasis.
 6. **For AI backend**: assemble the generation prompt using the template from `figure_templates/prompt_templates.md`. Fill all placeholders. Append the styling block from `venue_styles.md`.
 7. **For TikZ backend**: note which skeleton from `figure_templates/tikz_skeletons.md` to start from.
-8. **Caption**: draft an interpretive caption following voice_profile.md rules — claim-first, states the takeaway.
+8. **Caption**: draft an interpretive caption following craft_reference.md rules — claim-first, states the takeaway.
 
 Save the completed spec as `figure_spec_[fig_id].md` in the paper's `figures/` directory (create the directory if needed).
 
@@ -258,7 +258,7 @@ Read all of:
 
 - Is the caption interpretive (states what the figure shows and why it matters)?
 - Is it claim-first (the takeaway leads, details follow)?
-- Does it follow voice_profile.md rules (no hedging, no filler adjectives, active voice)?
+- Does it follow craft_reference.md rules (no hedging, no filler adjectives, active voice)?
 - Is it self-contained enough for a skim-reader?
 - **Verdict**: PASS / REVISE (suggest rewrite)
 

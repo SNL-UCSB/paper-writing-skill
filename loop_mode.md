@@ -15,7 +15,7 @@ No other detail is needed — this file supplies the obvious parts (which checks
 ## The durable ledger (memory across iterations)
 Maintain `notes/AUDIT_LEDGER.md` in the paper directory: one row per section, one column per gate.
 
-| Section | Mechanical (de-AI Part D) | Accessibility/Coherence (G1–G6) | Independent red-team | Status |
+| Section | Mechanical (gate_mechanical) | Semantic (gate_semantic S1–S31) | Independent red-team | Status |
 |---------|---------------------------|---------------------------------|----------------------|--------|
 
 Statuses: `PENDING` / `FINDINGS(n)` / `CLEAN`. Record, per section, the pasted grep counts and the last
@@ -27,11 +27,12 @@ red-team findings. This ledger IS the loop's memory — read it fresh at the sta
 2. Select the next unit of work: the highest-priority section not yet `CLEAN` through all three gates
    (respect any user scope).
 3. Run the three gates on that section (see `red_team_protocol.md`):
-   a. MECHANICAL — run ALL `author_profile/de_ai_checklist.md` Part D greps; paste the counts.
-   b. ACCESSIBILITY/COHERENCE — apply `author_profile/accessibility_checklist.md` (G1–G6).
-   b2. CRAFT — apply `author_profile/elements_of_style_checklist.md`: run its `[MECH]` grep gate
-       (active voice, needless words, pompous usage, qualifiers) and read for its `[JUDGE]` items.
-   c. INDEPENDENT RED-TEAM — spawn a FRESH reviewer (subagent) that did NOT write the text; it returns findings.
+   a. MECHANICAL — run ALL `author_profile/gate_mechanical.md` Part C greps; paste the counts.
+   b. SEMANTIC — apply `author_profile/gate_semantic.md` (S1–S31): accessibility, coherence,
+      consistency, rigor, honest positioning, figures.
+   c. CRAFT — check the changed prose against `author_profile/craft_reference.md` (the register's
+      positive rules).
+   d. INDEPENDENT RED-TEAM — spawn a FRESH reviewer (subagent) that did NOT write the text; it returns findings.
 4. FIX every finding in the section's text.
 5. Re-run the gates on the fixed text. Zero surviving findings → mark the section `CLEAN`; else `FINDINGS(n)`.
 6. Update `notes/AUDIT_LEDGER.md` (grep counts, findings, fixes, status). Rebuild the PDF if a section changed.
