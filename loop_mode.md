@@ -19,7 +19,10 @@ Maintain `notes/AUDIT_LEDGER.md` in the paper directory: one row per section, on
 |---------|---------------------------|---------------------------------|----------------------|--------|
 
 Statuses: `PENDING` / `FINDINGS(n)` / `CLEAN`. Record, per section, the pasted grep counts and the last
-red-team findings. This ledger IS the loop's memory — read it fresh at the start of every iteration.
+red-team findings — and **cite the exact rule ID for every fix** (`M#` / `S#`), so the ledger shows
+which rule each iteration addressed (e.g. `§3.2: fixed 2× M11 passive, 1× M12 wordiness, 1× S13
+gloss pile-up`). The rule ID is the provenance. This ledger IS the loop's memory — read it fresh at
+the start of every iteration.
 
 ## One iteration (the repeatable unit)
 1. Read `notes/AUDIT_LEDGER.md` (create it from the section list if absent) and `project_context.md`
@@ -35,8 +38,9 @@ red-team findings. This ledger IS the loop's memory — read it fresh at the sta
    d. INDEPENDENT RED-TEAM — spawn a FRESH reviewer (subagent) that did NOT write the text; it returns findings.
 4. FIX every finding in the section's text.
 5. Re-run the gates on the fixed text. Zero surviving findings → mark the section `CLEAN`; else `FINDINGS(n)`.
-6. Update `notes/AUDIT_LEDGER.md` (grep counts, findings, fixes, status). Rebuild the PDF if a section changed.
-7. Emit a one-line iteration summary (section, findings fixed, status).
+6. Update `notes/AUDIT_LEDGER.md` (grep counts, **rule IDs fixed** (`M#`/`S#`), findings, status).
+   Rebuild the PDF if a section changed.
+7. Emit a one-line iteration summary (section, rule IDs fixed, findings count, status).
 
 ## Stop condition (the loop ends itself)
 End when EVERY in-scope section is `CLEAN` through all three gates (ledger all green): report the final

@@ -22,7 +22,10 @@ audit, and BEFORE the text is shown to the user or committed.
      illogical jump" — plus lexical + decomposition consistency, non-duplication, mappability/grounding,
      honest positioning, and directness (deliver the noun);
    - hunts the four failure classes explicitly: AI-sounding, inaccessible, incoherent, illogical;
-   - REFUSES to pass until clean, returning a findings list (category, line, concrete fix) — not a yes/no.
+   - REFUSES to pass until clean, returning a findings list — not a yes/no. Each finding cites the
+     exact **rule ID** it violates (`M#` from `gate_mechanical.md` or `S#` from `gate_semantic.md`),
+     plus line and concrete fix. The rule ID is the provenance: it makes every fix traceable to the
+     specific rule in the ledger.
 
 ## Evidence rule
 The grep output + the red-team findings ARE the audit record. A section is "clean" only when the red-team

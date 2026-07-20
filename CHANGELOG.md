@@ -2,6 +2,14 @@
 
 All notable changes to the paper-writing skill.
 
+## [v3.0.1] — 2026-07-20 — Fix-level provenance in the audit ledger
+
+- The independent red-team's findings and the `/loop` audit ledger now **require citing the exact
+  rule ID** (`M#` from `gate_mechanical.md`, `S#` from `gate_semantic.md`) for every fix — e.g.
+  `§3.2: fixed 2× M11 passive, 1× M12 wordiness`. This restores full fix-level traceability (which
+  rule each iteration addressed) that had been implicit after the v3.0.0 consolidation. Provenance
+  keys to the self-contained gate IDs; no external-source citation is reintroduced.
+
 ## [v3.0.0] — 2026-07-20 — Style-enforcement pipeline + three-gate architecture
 
 The skill moves from a style *reference* to an evidence-gated *enforcement pipeline*, and the style
