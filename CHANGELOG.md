@@ -2,6 +2,26 @@
 
 All notable changes to the paper-writing skill.
 
+## [v3.1.0] — 2026-07-23 — Artifact gate: render and inspect the PDF
+
+### Added
+- **`author_profile/gate_artifact.md`** — a fourth gate that audits the rendered PDF, not only the
+  source. **Part A** greps the compile log (`Overfull \hbox/\vbox`, undefined refs/citations,
+  missing assets/colors). **Part B** renders every changed page and inspects each float for
+  clipping/overflow, reused-float template-refit, legibility + axis units, color-as-only-channel,
+  caption terseness (G7), and placement/reference-locality.
+- Wired into the **Mandatory Style Audit** as scan item 8 and process step (d): any edit that adds
+  or changes a float, caption, or table must compile → grep the log → render → inspect before it is
+  reported done, and the independent red-team is handed the **rendered page images**, not only the
+  `.tex`.
+
+### Why
+- The style audit was **source-only**, so figures and tables shipped unexamined. A `figure*` reused
+  from another venue's template overflowed the column and clipped its content while the text gate
+  reported the section clean; result tables encoded "kept vs lost" by color alone. Rendering the
+  page and looking at it is the check that catches these. "Audited" now requires a render, not a
+  mental pass.
+
 ## [v3.0.1] — 2026-07-20 — Fix-level provenance in the audit ledger
 
 - The independent red-team's findings and the `/loop` audit ledger now **require citing the exact
