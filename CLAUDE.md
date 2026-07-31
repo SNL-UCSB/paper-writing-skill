@@ -28,7 +28,7 @@ one positive craft reference:
 - `editorial_principles.md` — 14 cross-paper principles with evidence from forensic revision analysis
 - `craft_reference.md` — how to write (the positive layer): sentence-level style (~21-word mean, claim-first, active voice, named-over-vague) and three registers (base/terse, conceptual/position, warm/narrative)
 - `gate_mechanical.md` — the single greppable style gate (M1–M18): em-dashes, antithesis, intensifiers, banned/pompous/fancy words, passive voice, wordiness, term-drift — one grep script
-- `gate_semantic.md` — the single reader-judgment gate (S1–S31): define-before-use, followability, coherence/consistency, rigor/grounding, honest positioning, figures, closure gate
+- `gate_semantic.md` — the single reader-judgment gate (S1–S31, S32): define-before-use, followability, coherence/consistency, rigor/grounding, honest positioning, figures, closure gate
 - `compression_patterns.md` — 7 compression operations with before/after examples
 - `rhetorical_moves.md` — cross-section move sequences
 - `intervention_types.md` — 7 advisor intervention types for draft review

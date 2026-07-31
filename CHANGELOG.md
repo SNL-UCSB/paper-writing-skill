@@ -2,6 +2,20 @@
 
 All notable changes to the paper-writing skill.
 
+## [v3.1.0] — 2026-07-31 — S32: citation authenticity and bibliographic accuracy
+
+- Added **S32** to `gate_semantic.md` (Group 4 — Rigor and grounding, numbered out of sequence to
+  avoid renumbering S19–S31): every `.bib` entry must be verified against a real, authoritative
+  source (RFC Editor, Crossref, dblp, Semantic Scholar) — not from model memory — for existence,
+  complete and correctly-ordered author list, exact title, and correct venue/year. Closes a real gap:
+  Principle 14 (`editorial_principles.md`) required every claim to *have* a citation but nothing
+  checked that a citation was *real*. First applied against a 32-entry chapter bibliography outside
+  this repo: 28 clean, 4 real discrepancies found (a one-year-off date, two real papers' metadata
+  conflated under one entry, an RFC cited under the wrong number, an 11-author truncation on a
+  21-author paper) — zero outright hallucinations, but each would have misled a reader tracing the
+  source. Updated the `S1–S31` range references in `README.md`, `CLAUDE.md`, and `loop_mode.md` to
+  `S1–S31, S32`.
+
 ## [v3.0.1] — 2026-07-20 — Fix-level provenance in the audit ledger
 
 - The independent red-team's findings and the `/loop` audit ledger now **require citing the exact

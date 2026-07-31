@@ -15,7 +15,7 @@ No other detail is needed — this file supplies the obvious parts (which checks
 ## The durable ledger (memory across iterations)
 Maintain `notes/AUDIT_LEDGER.md` in the paper directory: one row per section, one column per gate.
 
-| Section | Mechanical (gate_mechanical) | Semantic (gate_semantic S1–S31) | Independent red-team | Status |
+| Section | Mechanical (gate_mechanical) | Semantic (gate_semantic S1–S31, S32) | Independent red-team | Status |
 |---------|---------------------------|---------------------------------|----------------------|--------|
 
 Statuses: `PENDING` / `FINDINGS(n)` / `CLEAN`. Record, per section, the pasted grep counts and the last
@@ -31,7 +31,7 @@ the start of every iteration.
    (respect any user scope).
 3. Run the three gates on that section (see `red_team_protocol.md`):
    a. MECHANICAL — run ALL `author_profile/gate_mechanical.md` Part C greps; paste the counts.
-   b. SEMANTIC — apply `author_profile/gate_semantic.md` (S1–S31): accessibility, coherence,
+   b. SEMANTIC — apply `author_profile/gate_semantic.md` (S1–S31, S32): accessibility, coherence,
       consistency, rigor, honest positioning, figures.
    c. CRAFT — check the changed prose against `author_profile/craft_reference.md` (the register's
       positive rules).
