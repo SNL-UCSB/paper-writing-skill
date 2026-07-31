@@ -51,7 +51,7 @@ by mechanism:
 | File | Role |
 |---|---|
 | `author_profile/gate_mechanical.md` | The single **grep gate** (M1–M18): em-dashes, antithesis, filler/pompous/fancy words, passive voice (zero tolerance), wordiness, term-drift. Runs on every edit. |
-| `author_profile/gate_semantic.md` | The single **reader-judgment gate** (S1–S31): define-before-use, followability, coherence, consistency, rigor/grounding, honest positioning, figures, closure. Runs in the red-team/loop pass. |
+| `author_profile/gate_semantic.md` | The single **reader-judgment gate** (S1–S31, S32): define-before-use, followability, coherence, consistency, rigor/grounding, honest positioning, figures, closure. Runs in the red-team/loop pass. |
 | `author_profile/craft_reference.md` | **How to write** (the positive layer): sentence-level style and three registers (base/terse, conceptual/position, warm/narrative). |
 
 **The red-team.** After the author's audit, an *independent* reviewer that did not write the text
@@ -86,7 +86,7 @@ paper-writing-skill/
 │   ├── editorial_principles.md    #   14 principles with evidence
 │   ├── craft_reference.md         #   how to write (three registers)
 │   ├── gate_mechanical.md         #   the grep gate (M1–M18)
-│   ├── gate_semantic.md           #   the reader-judgment gate (S1–S31)
+│   ├── gate_semantic.md           #   the reader-judgment gate (S1–S31, S32)
 │   ├── compression_patterns.md    #   7 compression operations
 │   ├── rhetorical_moves.md        #   cross-section move sequences
 │   └── intervention_types.md      #   7 advisor intervention types
