@@ -22,7 +22,7 @@ fails — gloss the gloss.
 - Grep aid: `grep -rnoE "[A-Z][a-zA-Z]+×[A-Z][a-zA-Z]+|\b[A-Z][a-z]+[A-Z][a-zA-Z]+\b" sections/*.tex`
   — for each hit, confirm a definition precedes its first argumentative use.
 
-**S2. Term-introduction order (MAJOR).** In a concept chain (abstraction → grammar → DSL), each
+**S2. Term-introduction order (MAJOR).** In a concept chain (abstraction → interface → implementation), each
 term is introduced and connected before it is leaned on. List coined terms by first appearance;
 each must be defined at or before that point.
 
@@ -37,13 +37,14 @@ given what they need: forward references to unseen figures, terms used before th
 
 **S5. Parse-accessibility (MAJOR).** A sentence can be all common words and still unparseable.
 Glossing every term is not enough. Hunt and fix:
-- **Reduced relative clauses / dropped who-that**: "an operator told an embedding is anisotropic
-  still cannot say…" forces the reader to reconstruct "an operator *who is* told *that*…". Restore
+- **Reduced relative clauses / dropped who-that**: "a user told a cache entry is stale
+  still cannot say…" forces the reader to reconstruct "a user *who is* told *that*…". Restore
   the omitted words or front the participle.
 - **Opaque idioms a literal reader cannot decode** ("it ties the two", "earns its keep", "reads at
   two altitudes"). Replace with the literal meaning.
-- **Overloaded coined words**: reserve one meaning per word. If "read" names an input strategy, a
-  recovered value, and the act of measuring, pick one and rename the others.
+- **Overloaded coined words**: reserve one meaning per word. If "hit" names a cache lookup that
+  succeeds, a request counted in the hit rate, and an object that stays resident, pick one and
+  rename the others.
 - **Compressed multi-clause sentences** packing a definition + a claim + a hedge into one breath.
 
 **S6. Gloss once, plainly, then stop.** Accessibility and de-AI pull against each other: glosses
@@ -87,7 +88,7 @@ home; cross-reference elsewhere.
 **S11. Referent and conflation scan (MAJOR).** Paper-wide sweep: flag every vague "it / this /
 these / that <noun>" and vague subject ("a subset / some / you / a second") and name the antecedent
 or actor. Disambiguate thing-vs-process ("generating the data", not "the data") and
-abstract-vs-concrete ("cost = student time").
+abstract-vs-concrete ("cost = engineer time").
 
 ---
 
@@ -140,9 +141,8 @@ explicit closure (which design choice satisfies it) in the design section. Build
 design-choice table; every requirement row has a design answer.
 
 **S20. Positives-first (MAJOR).** Abstract, Introduction, and Conclusion carry the positive
-contribution, not the limitations. If a weakness is an artifact of your own data collection, do not
-foreground it upfront; assume the clean dataset and move the lesson to a Discussion paragraph,
-framed as a community best-practice, not a confession.
+contribution, not the limitations. State each limitation once, in proportion to its effect; put
+methodological lessons in a Discussion paragraph.
 
 **S21. Honest, building-upon positioning — especially of your OWN prior work (CRITICAL).**
 Acknowledge what prior work attempted; do not claim it "ignored" something it treated superficially
@@ -152,14 +152,14 @@ evidence-backed (S16). No inconsistency between how Related Work, Background, an
 same prior work.
 
 **S22. Describe an enabling system by its capability (MAJOR).** When a system enables your work (a
-generator, a substrate), state concretely what it does (from one intent it produces X, enforces Y,
+simulator, a dataset, a library), state concretely what it does (from one input it produces X, enforces Y,
 at scale Z) and why your contribution is infeasible without a system of that kind — do not describe
 it abstractly.
 
 **S23. Claim-first, one-line headings and paragraph labels (MAJOR).** Headings and `\smartparagraph`
-labels are claims, not topics, and short (3–6 words, one line). "Decodability splits wide from
-deep," not "Decodability: wide models keep the conditions while deep models keep only the
-application." Audit every label for verbosity and every heading for wrapping.
+labels are claims, not topics, and short (3–6 words, one line). "Batching halves tail
+latency," not "Batching: grouping requests into one disk write reduces queueing, so tail latency
+falls by half under load." Audit every label for verbosity and every heading for wrapping.
 
 **S24. Break a wall of text with a table (MAJOR).** When a section (often Background) accumulates
 findings as dense prose, move the per-item findings into a compact table and let the prose interpret

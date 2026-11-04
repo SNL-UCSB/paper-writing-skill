@@ -29,10 +29,14 @@ questions across 6 phases) to create one.
 
 Requires Claude Code installed and signed in (https://docs.claude.com).
 
+**New to the skill? Read [USAGE.md](USAGE.md)**: your first session, which mode for which situation, where outputs land, how to iterate, and how to keep unpublished work private.
+
 ## How It Works
 
 Three layers: a **fixed pipeline**, **customizable rules** (defaults provided), and a per-paper
 **project context**.
+
+**Story mode** (`story_mode.md`) comes first when the ideas already exist across meeting notes, drafts, code and related work: ten steps (or a short path for workshop papers) turn that record into a paper story, an outline in the venue's structure, and a calibration spec, inventing nothing the record does not contain.
 
 **The pipeline** (five stages):
 
@@ -65,6 +69,7 @@ venue-specific styling. Data figures (plots) go through the separate `/viz` skil
 
 ### Common workflows
 
+- "Turn our notes into a <venue> outline" — runs story mode on your notes, drafts, code and earlier reviews.
 - "Help me write the evaluation" — drafts the 6-move sequence, then runs the checklist.
 - "Review this introduction" — applies the intervention types, returns numbered feedback.
 - "Compress section 4" — applies the 7 compression operations, reports before/after counts.
@@ -76,7 +81,9 @@ venue-specific styling. Data figures (plots) go through the separate `/viz` skil
 ```
 paper-writing-skill/
 ├── SKILL.md                       # Main skill file (Claude reads this)
+├── USAGE.md                       # How to use the skill well (start here)
 ├── brainstorming_guide.md         # 34 questions across 6 phases
+├── story_mode.md                  # From a group's existing record to a story and outline
 ├── figure_synthesis_guide.md      # Non-data figure workflow
 ├── red_team_protocol.md           # Independent, evidence-gated review
 ├── loop_mode.md                   # Resumable /loop audit-and-fix
@@ -93,7 +100,7 @@ paper-writing-skill/
 ├── writing_checklists/            # Post-draft structural checklists
 ├── section_rhetorical_moves/      # Per-section move sequences + examples
 ├── figure_templates/              # Venue styles, prompts, TikZ skeletons
-└── examples/                      # project_context template + a real example
+└── examples/                      # project_context template + a synthetic filled-in example
 ```
 
 The rules, checklists, and move guides also work without Claude Code — print them for a lab
@@ -114,6 +121,10 @@ Defaults ship for systems/networking and ML venues. Edit files in `author_profil
 **For advisors:** fork the repo, encode your standards in `author_profile/`, and have students clone
 your fork — they get your group's conventions immediately. Students can further customize; the
 pipeline stays consistent.
+
+## Private overlays
+
+This repository is public, so every example in it is synthetic. A research group can keep its real worked cases, house rules and project records in a **private overlay skill** installed next to this one: an installed skill whose name ends in `paper-writing-lab` (for example `~/.claude/skills/paper-writing-lab/` or `~/.claude/skills/<group>-paper-writing-lab/`). When an overlay is present, the skill reads it after its own files; nothing from the overlay should ever be copied into this repository.
 
 ## Troubleshooting
 

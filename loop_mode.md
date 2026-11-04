@@ -4,7 +4,6 @@
 > the skill run a RESUMABLE audit → red-team → fix cycle with NO further instructions. Each loop iteration is
 > a self-contained unit that reads its state from disk, does the next chunk of work, and updates state — so
 > progress survives context loss between iterations. The loop ends itself when the paper is clean.
-> Added 2026-07 from a live-review audit (`notes/PAPER_WRITING_SKILL_GAPS.md`).
 
 ## What the user types (invocation)
 - `/loop apply the paper-writing skill iteratively`   ← self-paced; recommended

@@ -76,7 +76,7 @@ Every evaluation goes through three stages:
 
 | Stage | Character | What it looks like |
 |-------|-----------|-------------------|
-| v1: Lab notebook | Exploratory, question-based headings | "Can we explain?" / "What happens if...?" |
+| v1: Lab notebook | Exploratory, question-based headings | "Does it work?" / "What happens if...?" |
 | v2: Technical report | Comprehensive, infrastructure-heavy | 30+ subsections, everything included |
 | v3: Conference paper | Compressed, narrative-driven | Labeled paragraphs + Takeaways, claims-first headings |
 

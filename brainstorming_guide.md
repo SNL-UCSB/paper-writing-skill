@@ -16,7 +16,7 @@ Most students skip straight to describing their system. That's backwards. Review
 
 1. **Who is suffering?** Name specific actors — not "users" but "network operators at Tier-1 ISPs" or "ML practitioners training models on heterogeneous clusters." If you can't name the actor, you don't know who your work helps.
 
-2. **What breaks for them today?** Describe the concrete failure mode. Not "things are slow" but "operators must manually inspect 10,000+ time series daily to detect anomalies, and 60% are false positives." Ground it in observable behavior.
+2. **What breaks for them today?** Describe the concrete failure mode. Not "things are slow" but "after each outage, on-call engineers spend hours bisecting configuration changes to find the one that broke routing." Ground it in observable behavior.
 
 3. **Why does it break?** This is the structural limitation — the root cause that can't be fixed by just "doing more" of the current approach. Is it a fundamental assumption that doesn't hold? A missing abstraction? An architectural mismatch? If the answer is "they just need more data/compute/effort," you may not have a research contribution — you have an engineering task.
 
@@ -24,9 +24,9 @@ Most students skip straight to describing their system. That's backwards. Review
 
 ### 1.2 The Intellectual Gap
 
-5. **What do existing approaches assume that doesn't hold?** Name 2-3 specific systems or methods. For each, identify the assumption they make that fails in your setting. Example: "Chronos2 assumes stationarity, which fails on bursty telemetry where 90% of timestamps are zero." This becomes your Problem Gap (Introduction Move 2).
+5. **What do existing approaches assume that doesn't hold?** Name 2-3 specific systems or methods. For each, identify the assumption they make that fails in your setting. Example: "Baseline X assumes requests arrive independently, which fails when clients retry in lockstep." This becomes your Problem Gap (Introduction Move 2).
 
-6. **Is the limitation STRUCTURAL or QUANTITATIVE?** Structural: "Linear models can't capture event-triggered dynamics." Quantitative: "Existing models only achieve 80% accuracy." Structural limitations motivate new approaches. Quantitative gaps motivate more experiments. If your gap is only quantitative, your paper will face "incremental" criticism.
+6. **Is the limitation STRUCTURAL or QUANTITATIVE?** Structural: "A per-site cache cannot use misses observed at other sites." Quantitative: "Existing caches only reach an 80% hit rate." Structural limitations motivate new approaches. Quantitative gaps motivate more experiments. If your gap is only quantitative, your paper will face "incremental" criticism.
 
 7. **Can you draw a 2×2 matrix of existing approaches?** Put approach categories on one axis and capabilities on the other. Where is the empty quadrant? That's your paper's territory. If there's no empty quadrant, your contribution needs to be something other than a new approach (maybe a new understanding, a new benchmark, or a unifying framework).
 
@@ -40,7 +40,7 @@ Most students skip straight to describing their system. That's backwards. Review
 
 9. **What is the ONE thing a reader should remember after skimming for 60 seconds?** If your answer is a list, you haven't found the core insight yet. Boil it down to one sentence. This becomes your key abstraction (Introduction Move 3).
 
-10. **Can you name your core idea in 2-4 words?** A compound noun phrase that captures the intellectual contribution. Examples of the pattern: "event-centric decomposition," "progressive disaggregation," "intrinsic evaluation framework." If you can't name it, it isn't crisp enough yet. The name will evolve — but having even a placeholder forces precision.
+10. **Can you name your core idea in 2-4 words?** A compound noun phrase that captures the intellectual contribution. Examples of the pattern (invented): "demand-first placement," "staged admission control," "lease-based eviction." If you can't name it, it isn't crisp enough yet. The name will evolve — but having even a placeholder forces precision.
 
 ### 2.2 Evidence Mapping
 
@@ -51,7 +51,7 @@ Most students skip straight to describing their system. That's backwards. Review
 
 If a claim has no evidence entry, it's an aspiration, not a contribution. Move it to "Open Questions."
 
-12. **What is your headline number?** The single most impressive quantitative result. "13× error reduction," "44% lower latency," "2× faster search." This goes in the introduction's Results Preview and the abstract. If you don't have one yet, which experiment would produce it?
+12. **What is your headline number?** The single most impressive quantitative result. "N× higher throughput," "X% lower latency," "M× faster lookup." This goes in the introduction's Results Preview and the abstract. If you don't have one yet, which experiment would produce it?
 
 13. **What CAN'T your system do?** Every system has limitations. Name them now. Honest limitations in the paper build reviewer trust. Hidden limitations get discovered during review and destroy trust.
 
@@ -84,7 +84,7 @@ The "what if it fails" column is critical. If an experiment could fail and you h
 
 19. **What's the "honest disaggregation"?** Where does your system work BEST and WORST? Breaking results down by meaningful dimensions (difficulty level, data characteristics, edge cases) shows you understand your system. Uniform improvement everywhere is suspicious; nuanced results are convincing.
 
-20. **Do you have a robustness/generalization story?** Does your system work beyond the specific evaluation setup? New data? New domains? Different parameters? Temporal shift? If not, reviewers will ask "does this generalize?" — have an answer ready.
+20. **Do you have a robustness/generalization story?** Does your system work beyond the specific evaluation setup? New data? New domains? Different parameters? Different hardware? If not, reviewers will ask "does this generalize?" — have an answer ready.
 
 ---
 
@@ -169,7 +169,7 @@ Once you've answered these questions, Claude will generate a `project_context.md
 
 This `project_context.md` becomes the binding contract for all writing sessions. Every time you invoke `/paper-writing`, Claude reads it and holds you to it. If something changes (new results, revised framing, shifted venue), update the context file — don't just tell Claude in conversation.
 
-See `examples/netburst_project_context.md` for what a complete, real project context looks like.
+See `examples/example_project_context.md` for what a complete project context looks like (a synthetic example).
 
 ### Then: Write Draft 0 of the Introduction
 

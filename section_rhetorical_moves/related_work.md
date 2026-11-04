@@ -22,7 +22,7 @@ Two strategies:
 
 **Function**: Group prior work into 2–4 categories, each with a named limitation.
 
-**How to do it**: Name categories by approach type (e.g., "Crowdsourced / Controlled / Hybrid"), not by individual paper. Never more than 4 categories — more signals the author hasn't found the right abstraction.
+**How to do it**: Name categories by approach type (e.g., "Rule-based / Learned / Hybrid"), not by individual paper. Never more than 4 categories — more signals the author hasn't found the right abstraction.
 
 **Test**: Can the reader hold the full taxonomy in working memory?
 

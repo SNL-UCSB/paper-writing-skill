@@ -40,7 +40,7 @@ An effective introduction follows a 6-move sequence. Each move has a specific fu
 
 **Function**: Introduce the paper's defining intellectual contribution as a named concept.
 
-**How to do it**: Coin a term that captures your core insight. Make it a compound noun phrase, ideally with an architectural metaphor. Examples of the pattern (not from specific papers): "external termination layer," "progressive disaggregation," "intrinsic evaluation framework."
+**How to do it**: Coin a term that captures your core insight. Make it a compound noun phrase, ideally with an architectural metaphor. Examples of the pattern (invented for illustration): "demand-first placement," "staged admission control," "lease-based eviction."
 
 **Critical insight**: The key abstraction appears ONLY in final versions of papers. It is discovered through writing, not planned in advance. If you don't have one yet, that's normal — it will emerge as you write the evaluation and design sections.
 

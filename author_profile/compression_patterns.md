@@ -10,9 +10,9 @@ Late-stage compression is a universal part of the writing process. This document
 
 **Operation**: Remove subordinate clauses, redundant qualifiers, and throat-clearing phrases.
 
-**Before**: "We argue that a data-driven approach that leverages machine learning techniques can potentially offer significantly better trade-offs between the measurement cost and accuracy."
+**Before**: "We argue that an approach that reuses previously compiled query plans can potentially offer a significant reduction in the time spent compiling queries."
 
-**After**: "Do speed tests need to transmit their full data volume to produce accurate results?"
+**After**: "Caching query plans cuts compile time N×."
 
 **Principle**: Every word must earn its place. If a clause can be removed without losing meaning, remove it.
 
@@ -78,7 +78,7 @@ Late-stage compression is a universal part of the writing process. This document
 
 **Before**: "Model A achieves 92%. Model B achieves 87%. Model C achieves 84%. Model D achieves 91%."
 
-**After**: "Table 3 shows all model accuracies. Our system outperforms all baselines, with the largest margin against static thresholds."
+**After**: "Table 3 shows all model accuracies. Our system outperforms all baselines, with the largest margin against the fixed-rule baseline."
 
 **Principle**: Dense numerical comparisons belong in tables. Prose should interpret patterns, not list numbers.
 
