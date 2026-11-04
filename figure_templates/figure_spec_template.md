@@ -79,9 +79,7 @@
 ## Caption
 
 <!-- Interpretive, claim-first. States the takeaway, not just a description. -->
-<!-- "NetBurst's three-stage pipeline transforms raw time series into event-centric -->
-<!-- representations, enabling per-event feature extraction (§3.2) and embedding-based -->
-<!-- similarity search (§3.3)." -->
+<!-- "System X's three-stage pipeline transforms A into B, enabling C (§3.2)." -->
 
 **Draft caption:** [...]
 

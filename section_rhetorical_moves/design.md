@@ -58,7 +58,7 @@ The design section answers "How should the reader think about this system?" befo
 
 ## Anti-Patterns to Avoid
 
-1. **Opening with infrastructure**: Don't start with an implementation detail ("Generating realistic data..."). Start with the abstraction ("Programming model for expressing...").
+1. **Opening with infrastructure**: Don't start with an implementation detail ("Parsing the configuration file..."). Start with the abstraction ("An interface for declaring...").
 
 2. **Formal math replacing intuition**: Dense mathematical formulation without a pipeline narrative. The math should survive but be subordinated to the flow.
 
@@ -72,6 +72,6 @@ For each subsection, check which level the heading achieves:
 
 - **WHAT** (minimum): "System Architecture" — names the topic
 - **WHY** (better): "Why do linear approaches fail?" — argues for the design
-- **SO-WHAT** (best): "Nondeterminism as a first-order requirement" — states the implication
+- **SO-WHAT** (best): "Partial failure as a first-order requirement" — states the implication
 
 Target: SO-WHAT headings for all subsections.

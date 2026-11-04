@@ -3,7 +3,7 @@
 <!-- This template maps to the Brain Dump questions in the skill. -->
 <!-- Fill this in by running /paper-writing and answering the Brain Dump prompts, -->
 <!-- or copy this file into your paper directory and fill it in manually. -->
-<!-- See examples/netburst_project_context.md for a real, complete example. -->
+<!-- See examples/example_project_context.md for a complete, synthetic example. -->
 
 ## Identity
 

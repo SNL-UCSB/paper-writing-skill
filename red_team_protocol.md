@@ -3,8 +3,7 @@
 > Why this exists: the de-AI mechanical gate and the style audit are run by the SAME agent that wrote the
 > prose, which then self-reports "passed." Self-audit rationalizes its own phrasing, and the mechanical grep
 > is skipped or its output never shown. Result: AI-sounding, inaccessible, and illogical text ships anyway.
-> This protocol makes review INDEPENDENT and EVIDENCE-GATED. Added 2026-07 from a live-review audit
-> (see the paper's `notes/PAPER_WRITING_SKILL_GAPS.md`).
+> This protocol makes review INDEPENDENT and EVIDENCE-GATED.
 
 ## When
 On every section draft or non-trivial rewrite: AFTER the author runs the de-AI mechanical gate + style

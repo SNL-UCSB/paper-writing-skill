@@ -14,7 +14,7 @@ This document classifies the 7 types of editorial interventions an advisor typic
 
 **Mechanism**: Complete rewrite of introduction and/or background. Near-zero sentence survival. New version created from scratch rather than editing in place.
 
-**Example pattern**: "Survey of approaches in domain X" → "Methodology-agnostic layer that addresses specific problem Y."
+**Example pattern**: "Survey of approaches in domain X" → "A drop-in layer that addresses specific problem Y."
 
 ---
 
@@ -54,7 +54,7 @@ This document classifies the 7 types of editorial interventions an advisor typic
 
 **When it fires**: When a term could mean multiple things, or a generic term obscures the specific mechanism.
 
-**Example patterns**: "heuristics" → "static thresholds, protocol-specific signals, timing-based strategies." "Data generation" → a coined term like "progressive disaggregation."
+**Example patterns**: "heuristics" → "fixed timeouts, per-client rate caps, size-based admission." "Data cleanup" → a coined term like "staged admission control."
 
 ---
 
@@ -64,7 +64,7 @@ This document classifies the 7 types of editorial interventions an advisor typic
 
 **When it fires**: When contributions read like a task list rather than claims the paper defends.
 
-**Example pattern**: "We propose a data-driven approach" → "We cast problem X as an optimal stopping problem, exposing the accuracy-cost trade-off as a configurable parameter."
+**Example pattern**: "We propose a data-driven approach" → "We cast X as a bin-packing problem."
 
 ---
 

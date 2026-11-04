@@ -1,6 +1,6 @@
 ---
 name: paper-writing
-description: "Research paper writing assistant that enforces Arpit Gupta's editorial principles, voice profile, and writing workflow. MANDATORY TRIGGERS: Use this skill whenever the user mentions writing a paper, drafting a section, revising a section, editing a paper, reviewing a draft, rewriting an introduction, writing an evaluation, polishing prose, compressing text, or any task involving .tex files, Overleaf, conference submissions, or paper deadlines. Also trigger when the user mentions any paper by name (NetBurst, NetForge, BQT+, TurboTest, etc.) in a writing context. This skill should activate for ANY research writing task — sections, abstracts, rebuttals, camera-ready edits, cover letters, or response to reviewers."
+description: "Research paper writing assistant that enforces the SNL lab's editorial principles and voice profile (customizable) and a staged writing workflow. MANDATORY TRIGGERS: Use this skill whenever the user mentions writing a paper, drafting a section, revising a section, editing a paper, reviewing a draft, rewriting an introduction, writing an evaluation, polishing prose, compressing text, or any task involving .tex files, Overleaf, conference submissions, or paper deadlines. Also trigger when the user names their paper in a writing context. This skill should activate for ANY research writing task — sections, abstracts, rebuttals, camera-ready edits, cover letters, or response to reviewers."
 ---
 
 # Paper Writing Skill
@@ -41,8 +41,15 @@ The three skills create a closed loop: the literature survey reveals the gap and
 3. Ask which paper the user is working on
 4. Look for a `project_context.md` in the paper's working directory
 5. If found, read it and treat it as binding constraints
-6. If not found, run the **Structured Brainstorming** workflow below to create one
+6. If not found, decide how to create one: if the ideas already exist in notes, drafts, code and related work, run **Story Mode** (`story_mode.md`); if they are mostly in the user's head, run **Structured Brainstorming** below
 7. Check for artifacts from sibling skills — survey paper notes with craft extractions, `exploration_log.md`, `braindump.md`, `plot_context.md`, WALTER narrations. If found, load them as reference material for the relevant pipeline stages
+8. Check for a **private overlay skill**: an installed skill whose name ends in `paper-writing-lab` (for example `~/.claude/skills/paper-writing-lab/` or `~/.claude/skills/<group>-paper-writing-lab/`). If present, read it: it carries a group's real worked cases, house rules and project records that cannot live in this public skill. Its project-specific guidance takes precedence over the defaults here; never copy its contents into this repository
+
+---
+
+## Story Mode — From a Group's Ideas to a Paper Story and Outline
+
+When the ideas for a paper are scattered across meeting notes, drafts, code, chat threads and related work, read `story_mode.md` and follow its ten steps (or its short path for workshop papers and short deadlines): read the whole record, connect the dots without inventing anything, place the idea in its intellectual history, read the closest work in depth, decide one core contribution, choose one framing, write a Draft 0 introduction with the motivation and skeleton, tie each claim to an evaluation question that could refute it, converge with review rounds and a calibration spec, and fill `project_context.md` so Stage 2 starts from the result. Triggers: "turn our notes into a <venue> outline", "what is the story for <venue>", "connect the dots", `/paper-writing story`.
 
 ---
 
@@ -68,8 +75,8 @@ Claude MUST read `brainstorming_guide.md` and walk the student through its 6 pha
 - **Go phase by phase.** Don't skip ahead. Phase 1 (the problem) must be clear before Phase 2 (the contribution) makes sense.
 - **"I don't know" is a valid answer.** Flag it as an open question and move on. Gaps discovered now are cheap to fix; gaps discovered during review are expensive.
 - **Push back on vague answers.** "It's faster" → "Faster for whom? By how much? On what workload?" Every answer should be specific enough to appear in the paper.
-- **Distinguish structural from quantitative.** "Existing tools aren't accurate enough" is quantitative — it motivates more experiments. "Existing tools assume stationarity, which fails on bursty data" is structural — it motivates a new approach. Papers need structural gaps.
-- **After all phases, generate `project_context.md`** using the template in `examples/project_context.md`. See `examples/netburst_project_context.md` for a real example of what a complete project context looks like.
+- **Distinguish structural from quantitative.** "Existing tools aren't accurate enough" is quantitative — it motivates more experiments. "Existing tools assume stationarity, which fails on non-stationary workloads" is structural — it motivates a new approach. Papers need structural gaps.
+- **After all phases, generate `project_context.md`** using the template in `examples/project_context.md`. See `examples/example_project_context.md` for a synthetic example of what a complete project context looks like.
 
 ---
 
@@ -95,13 +102,13 @@ These are extracted from the detailed files above. In case of conflict, the file
 
 - Mean sentence length: ~21 words. Maximum: ~40 words (contribution lists only).
 - Topic sentences assert claims. Never open a paragraph with background or context.
-- Zero hedging. "We show" not "We believe." "X reduces Y by 13×" not "X may help reduce Y."
+- Zero hedging. "We show" not "We believe." "X reduces Y by N×" not "X may help reduce Y."
 - Active voice everywhere — no exceptions. Passive voice obscures agency and weakens prose.
 - No filler adjectives: never use "novel," "significant," "state-of-the-art," "comprehensive," "robust," "substantial," "promising," "impressive." Replace with specific numbers or delete.
-- Signpost through claims: section openers may state the section's conclusion ("This section shows that X reduces Y by 13×") but never use content-free placeholders ("In this section, we describe..."). The test: does the opener tell a skim-reader what the section *concludes*?
+- Signpost through claims: section openers may state the section's conclusion ("This section shows that X reduces Y by N×") but never use content-free placeholders ("In this section, we describe..."). The test: does the opener tell a skim-reader what the section *concludes*?
 - No exclamation marks. No rhetorical questions outside introductions.
 - Paragraphs: 4–6 sentences. Every paragraph does exactly one of: make a claim, present evidence, synthesize a takeaway.
-- Headings are claims, not topics. "Event-centric decomposition reduces error 13×" not "Experimental Results."
+- Headings are claims, not topics. "Mechanism M reduces error N×" not "Experimental Results."
 - Named over vague: every mechanism, baseline, metric must have a proper name. If a term could apply to any paper in the field, it doesn't belong in this paper.
 - Interpret figures, don't just cite. "Figure 3 shows that X, confirming Y" not "See Figure 3."
 - Every evaluation subsection ends with a Takeaway paragraph.
@@ -174,7 +181,7 @@ Every paper goes through these stages in order. Claude identifies which stage th
 
 **Gate**: The user must have a one-sentence identity statement and contribution claims written as results. If they don't, read `brainstorming_guide.md` and walk them through all 6 phases interactively. Don't rush — this is the most important stage. A vague project context produces a vague paper.
 
-After brainstorming, generate a `project_context.md` file using the template in `examples/project_context.md` and save it in the paper's working directory. See `examples/netburst_project_context.md` for a real example.
+After brainstorming, generate a `project_context.md` file using the template in `examples/project_context.md` and save it in the paper's working directory. See `examples/example_project_context.md` for a complete synthetic example.
 
 **Important:** After creating `project_context.md`, add it to the project's `.gitignore` (create the file if it doesn't exist). This file contains strategic framing notes and advisor commentary that should not be committed to shared repositories by default.
 
@@ -354,6 +361,9 @@ Fix what can be fixed automatically (e.g., adding `~` before `\cite`). Flag what
 3. Emphasize: the brainstorming phase is the most important. A precise project context saves weeks of revision later.
 4. After brainstorming: write a **Draft 0 introduction** — a disposable framing scaffold (stakes, problem gap, rough contributions) that sets guardrails for the evaluation. Then point them to `section_rhetorical_moves/evaluation.md` — they'll write the evaluation next, constrained by Draft 0.
 5. Remind them: "Your first draft should be comprehensive — include everything. Compression comes later. The goal is to get material on paper, not to be concise. Draft 0 of the introduction will probably not survive — that's the point. It clarifies your thinking."
+
+### "Turn our notes into a paper outline" / "What is the story for <venue>?"
+Read `story_mode.md` and run its ten steps (or the short path). Start with step 1 (read the whole record) even if the user offers a summary; ask where the notes, drafts, code and related-work PDFs live. Keep everything beyond the record in a separate section for the user to accept or reject.
 
 ### "I need a non-data figure (architecture diagram, pipeline illustration, etc.)"
 1. Load the paper's `project_context.md`

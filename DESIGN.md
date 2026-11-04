@@ -57,8 +57,8 @@ wordiness; below ~15% means the draft was already near-final. Normal is 30–50%
 
 **Structured externalization.** The brainstorming workflow targets a specific failure: ideas that
 live as unstructured intuitions. Its 34 questions force each claim into a concrete, falsifiable
-statement — "my system is faster" becomes "reduces RTT estimation error by 13× on bursty telemetry
-by decomposing the signal into event-triggered and baseline components." The sequence prevents
+statement — "my system is faster" becomes "reduces p99 latency by N× on workload W
+by batching writes." The sequence prevents
 premature commitment: problem discovery must complete before contribution; knowing what the evidence
 shows constrains how the work is positioned.
 
@@ -132,5 +132,5 @@ Writing guidance that informed the rules, for further reading:
 ## Contributing
 
 Most useful additions: editorial principles from fields beyond systems/networking; rhetorical-move
-examples from more venues (SOSP, OSDI, CHI, USENIX Security); real `project_context.md` examples;
+examples from more venues (SOSP, OSDI, CHI, USENIX Security); synthetic `project_context.md` examples;
 domain-specific brainstorming questions; figure prompt templates for more archetypes.

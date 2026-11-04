@@ -12,7 +12,7 @@ Derived from related work analysis across 6 papers (see `section_rhetorical_move
 
 ## Category Clustering (Move 1)
 - [ ] Is prior work organized into **2-4 categories** (not a flat list)?
-- [ ] Are categories named by **approach type** (e.g., "Crowdsourced / Controlled / Hybrid"), not by individual paper?
+- [ ] Are categories named by **approach type** (e.g., "Rule-based / Learned / Hybrid"), not by individual paper?
 - [ ] Does each category contain **representative examples** (not exhaustive lists)?
 
 ## Per-Category Limitation (Move 2)

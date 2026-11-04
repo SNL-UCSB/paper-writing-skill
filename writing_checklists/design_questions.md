@@ -1,7 +1,7 @@
 # Self-Diagnostic: Design Section
 
 ## Source
-Derived from design rhetorical move analysis across 6 papers (see `section_rhetorical_moves/design.md` and `argument_evolution/`).
+Derived from design rhetorical move analysis across 6 papers (see `section_rhetorical_moves/design.md`).
 
 ---
 
@@ -9,7 +9,7 @@ Derived from design rhetorical move analysis across 6 papers (see `section_rheto
 - [ ] Does the section open with the **system's core abstraction** (named, defined)?
 - [ ] Is there an **overview/architecture figure** early in the section?
 - [ ] Does each subsection correspond to a **component in the overview figure**?
-- [ ] Are subsection headings **claim-first** (e.g., "Nondeterminism as a first-order requirement") rather than **descriptive** (e.g., "Abstract NFA")?
+- [ ] Are subsection headings **claim-first** (e.g., "Partial failure as a first-order requirement") rather than **descriptive** (e.g., "Retry State Machine")?
 
 ## Design Justification
 - [ ] For every major design choice, is there a **"why" argument**?

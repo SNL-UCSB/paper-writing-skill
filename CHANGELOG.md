@@ -2,6 +2,18 @@
 
 All notable changes to the paper-writing skill.
 
+## [v3.2.0] — 2026-11-04 — Story mode, usage guide, synthetic examples
+
+### Added
+- **Story mode** (`story_mode.md`): ten steps (plus a short path for workshop papers and short deadlines) from an existing record (meeting notes, drafts, code, reviews, related work) to a paper story, a Draft 0 introduction and outline, a calibration spec, and a filled `project_context.md` that hands off to Stage 2. Each step has a request template, a done-when test and the usual failure with its corrective request; includes intro structures by venue and a failure-mode table.
+- **`USAGE.md`**: a student-facing guide covering setup, the first session, a situation-to-mode table, outputs, iteration, other skills, customizing, privacy and troubleshooting.
+- **Private overlays**: the skill reads a private overlay skill when one is installed, so a group can keep real cases and project records out of this public repository.
+
+### Changed
+- Every example is now synthetic. The filled-in project context is a fictional system (`examples/example_project_context.md`); example sentences, headings, captions and numbers across the rules and guides were rewritten to teach the same lessons without referring to real projects.
+- The skill description names the defaults as the SNL lab's house style (customizable) and no longer lists specific papers as triggers.
+- `setup` installs `story_mode.md`.
+
 ## [v3.0.1] — 2026-07-20 — Fix-level provenance in the audit ledger
 
 - The independent red-team's findings and the `/loop` audit ledger now **require citing the exact

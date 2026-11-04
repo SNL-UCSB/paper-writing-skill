@@ -139,13 +139,13 @@ LEFT SIDE — "{{existing_approach_name}}" (the limitation):
 - Components: {{list of components in the existing approach}}
 - Data flow: {{how data moves through the existing approach}}
 - FAILURE POINT: {{where and why it breaks — mark with red (#EE6677)}}
-- Label: "{{short failure description — e.g., 'Misses bursty patterns'}}"
+- Label: "{{short failure description — e.g., 'Misses pattern X'}}"
 
 RIGHT SIDE — "{{proposed_approach_name}}" (the solution):
 - Components: {{list of components in the proposed approach}}
 - Data flow: {{how data moves through the proposed approach}}
 - SUCCESS POINT: {{where the improvement happens — mark with green (#228833)}}
-- Label: "{{short success description — e.g., 'Captures event boundaries'}}"
+- Label: "{{short success description — e.g., 'Captures pattern X'}}"
 
 SHARED ELEMENTS:
 - Both sides receive the same input: {{input description}}

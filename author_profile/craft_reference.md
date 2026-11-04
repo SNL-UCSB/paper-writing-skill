@@ -21,7 +21,7 @@ The default for a systems/ML paper that designs something and measures it.
 - **Active voice, present tense, direct verbs.** No exceptions (see `gate_mechanical.md` M11).
 - **Plain words over Latinate.** `use` not `utilize`; `enough` not `sufficient`; `show` not
   `demonstrate`; `let` not `enable` where it fits.
-- **Verbs over nominalizations.** `we compile the intent`, not `compilation of the intent is
+- **Verbs over nominalizations.** `we compile the query`, not `compilation of the query is
   performed`.
 - **Concrete over abstract; named over vague.** Name the mechanism, the number, the system. Put an
   agent in the subject slot, not "the existence of X." Every mechanism, baseline, and metric has a
@@ -33,8 +33,8 @@ The default for a systems/ML paper that designs something and measures it.
 - **Paragraph density.** 3–6 sentences (design paragraphs up to 8). Every paragraph does exactly
   one of: make a claim, present evidence, synthesize a takeaway. No empty connector paragraphs.
 - **Signposting through claims, not placeholders.** A section may open with a preamble that states
-  the section's conclusion ("This section shows that event-centric decomposition reduces error
-  13×"). Banned: content-free preambles ("In this section, we describe our setup"). Test: does the
+  the section's conclusion ("This section shows that mechanism M reduces error
+  N×"). Banned: content-free preambles ("In this section, we describe our setup"). Test: does the
   opener tell a skim-reader what the section *concludes*?
 - **Calibrated confidence.** Strongly assertive; claims match evidence scope. No "we solve the
   problem of" — instead "we address [specific aspect] of [bounded problem]." Zero hedging, with the
@@ -43,7 +43,7 @@ The default for a systems/ML paper that designs something and measures it.
   process description): "(1) Learning problem. We formulate… (2) Design. We implement… (3)
   Evaluation. We show…". Prefer "We show" over "We propose."
 - **Headings.** Claim-first, one typeset line, consistent capitalization across the document, no
-  terminal punctuation on section titles. "Event-centric decomposition reduces error 13×," not
+  terminal punctuation on section titles. "Mechanism M reduces error N×," not
   "Experimental Results."
 - **Emphatic words at the end.** Put the new, load-bearing element last; the second-strongest
   position is the start.

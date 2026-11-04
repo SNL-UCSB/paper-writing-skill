@@ -1,7 +1,7 @@
 # Self-Diagnostic: Evaluation Section
 
 ## Source
-Derived from evaluation rhetorical move analysis across 6 papers (see `section_rhetorical_moves/evaluation.md` and `author_profile/claim_evidence_patterns.md`).
+Derived from evaluation rhetorical move analysis across 6 papers (see `section_rhetorical_moves/evaluation.md`).
 
 ---
 
@@ -30,7 +30,7 @@ Derived from evaluation rhetorical move analysis across 6 papers (see `section_r
 - [ ] Does the Takeaway **tie back to a specific design claim or contribution**?
 
 ## Deep Dive / Disaggregation
-- [ ] Are results **disaggregated** by relevant conditions (e.g., by RTT, speed tier, geographic region)?
+- [ ] Are results **disaggregated** by relevant conditions (e.g., by load level, input size, region)?
 - [ ] Do disaggregated results reveal **where the system helps most** and **where it helps least**?
 - [ ] If aggregate results are "surprising," is there a **distribution-level analysis** explaining why?
 

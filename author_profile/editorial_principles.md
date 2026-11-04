@@ -14,7 +14,7 @@ The key insight: writing is a thinking tool, not just a communication tool. A pr
 
 **Observed consequence of skipping Draft 0**: Students who went straight to evaluation without framing guardrails produced evaluations that were technically complete but narratively incoherent — the experiments didn't build toward a unified argument because there was no argument to build toward.
 
-**Observed consequence of skipping the rewrite**: Papers whose Draft 0 introduction survived to submission frequently promised capabilities (e.g., "domain adaptation," "cross-domain generality") that the evaluation couldn't deliver. These papers were rejected.
+**Observed consequence of skipping the rewrite**: Papers whose Draft 0 introduction survived to submission frequently promised capabilities (e.g., "works on any workload") that the evaluation couldn't deliver. These papers were rejected.
 
 **Rule**: Write a Draft 0 introduction early (stakes, problem gap, rough contributions) to set evaluation guardrails. Write the final introduction AFTER the evaluation is complete, from scratch. Draft 0 is scaffolding, not a starting point for editing.
 
@@ -24,7 +24,7 @@ The key insight: writing is a thinking tool, not just a communication tool. A pr
 
 Replace every generic term with a specific, named alternative. Generic adjectives ("significant," "substantial," "promising," "novel") are space-consuming non-information. Named mechanisms, specific numbers, and coined terminology earn their place.
 
-**The test**: If a term could apply to ANY paper in the field, it doesn't belong in YOUR paper. "Data-driven approach" could describe thousands of papers. A precise phrase like "two-stage framework with configurable accuracy-cost trade-off" describes exactly one.
+**The test**: If a term could apply to ANY paper in the field, it doesn't belong in YOUR paper. "Data-driven approach" could describe thousands of papers. A precise statement like "We cast X as a bin-packing problem" describes exactly one.
 
 **Rule**: Every baseline, metric, and abstraction should have a proper name. If the paper introduces a new concept, NAME it — the name becomes citable.
 

@@ -79,7 +79,7 @@ For each non-data figure, ask the questions below. Skip questions the student ha
 
 #### Pipeline / Process Flow Questions
 
-1. What is being transformed? (e.g., "raw time series → event representation")
+1. What is being transformed? (e.g., "raw logs → structured events")
 2. How many transformation steps are there?
 3. For each step: what is the operation? Is it standard (off-the-shelf) or novel?
 4. Where does the pipeline branch or merge?
@@ -293,7 +293,7 @@ When a paper has multiple non-data figures, enforce consistency across all of th
 1. **Color semantics**: If blue represents "our system" in Figure 1, it must represent "our system" in all figures. Document the color-to-meaning mapping in the first `figure_spec.md` and reference it from all others.
 2. **Node shapes**: Consistent shape vocabulary across figures (rectangles for processing stages, cylinders for data stores, diamonds for decision points).
 3. **Font and line weight**: Identical across all figures — use the shared styles from `venue_styles.md`.
-4. **Naming**: The same component must have the same label in every figure. If the architecture overview calls it "Event Encoder," the component detail figure must also call it "Event Encoder."
+4. **Naming**: The same component must have the same label in every figure. If the architecture overview calls it "Encoder Stage," the component detail figure must also call it "Encoder Stage."
 5. **Level of detail**: Figures at the same level of abstraction should have similar visual complexity. An architecture overview shouldn't be more detailed than a component detail figure.
 
 When critiquing any figure after the first, check consistency against all previously critiqued figures.

@@ -20,7 +20,7 @@ Each rule states the ban, then a wrong→right example.
 `—`/`–` (Unicode). The single strongest machine-writing tell. Replace with a comma, colon,
 parentheses, or full stop. Parenthetical aside → parentheses; appositive → commas; dramatic
 reveal → new sentence.
-- ✗ `One process, the Core --- parses the intent.` → ✓ `One process, the Core, parses the intent.`
+- ✗ `One process, the scheduler --- parses the request.` → ✓ `One process, the scheduler, parses the request.`
 - Only exception: an em-dash inside a verbatim quotation from an external source.
 
 **M2. Antithesis / negation-as-rhetoric — BANNED as decoration.** `X, not Y` · `not X but Y` ·
@@ -31,9 +31,9 @@ reveal → new sentence.
   rewritten positively? If yes, the negation is doing factual work — keep it. If no, it was
   rhetorical — cut it and assert the positive.
 - ✗ `measured, not asserted` → ✓ `measured on real studies`
-- ✗ `Cross-layer coupling, not any single constraint, makes it hard.` → ✓ `Cross-layer coupling makes it hard.`
-- **Factual negations to KEEP:** "students cannot derive…" (a real capability gap), "the system
-  fails when…" (a real failure mode), "39 of whom had taken…" (a quantitative fact).
+- ✗ `Lock contention, not any single slow query, limits throughput.` → ✓ `Lock contention limits throughput.`
+- **Factual negations to KEEP:** "the parser cannot recover…" (a real capability gap), "the system
+  fails when…" (a real failure mode), "N of whom had used…" (a quantitative fact).
 
 **M3. Editorializing / promotional closers — BANNED.** Sentences whose only job is to tell the
 reader how to feel about the previous sentence: `the saving is the point` · `is not real` ·
@@ -65,7 +65,7 @@ payoff: `What sets X apart is…` · `The key insight is…` · `Two commitments
 State the insight directly.
 
 **M9. Branded / evocative metaphor filler — BANNED.** Impressive-sounding metaphors with no
-operational content: `the machine that runs any spec` · `draw their power from` · `under the hood`
+operational content: `the engine that runs any workload` · `draw their power from` · `under the hood`
 · `X meets Y` (`where structure meets scale`). Use the mechanism.
 
 **M10. Vague-mechanism / futurist hype verbs — AUDIT (replace with a stated mechanism).**
@@ -135,7 +135,7 @@ grep -rnoE "\b(is|are|was|were|be|been|being)\s+([a-z]+ed|done|made|shown|given|
 grep -rnoE ",? not [0-9A-Za-z\\]|not only .* but|rather than|less .* than|is the point|whatever it is|means nothing|more than just|not in competition with|on one hand|on the other hand" sections/*.tex
 
 # ── M3/M4/M8/M9: editorializing, intensifiers, grandiose setups, metaphor filler ──
-grep -rnoE "in effect|in a sense|at (its|the) (heart|core)|in essence|\btruly\b|\bgenuinely\b|\bindeed\b|\bin fact\b|precisely because|a testament to|the kind of .* that|exactly the kind|is the point|set(s)? .* apart|no (predecessor|one) .* (made|posed)|the key (insight|idea) is|the machine that|draw(s)? .* power from|under the hood|where .* meets" sections/*.tex
+grep -rnoE "in effect|in a sense|at (its|the) (heart|core)|in essence|\btruly\b|\bgenuinely\b|\bindeed\b|\bin fact\b|precisely because|a testament to|the kind of .* that|exactly the kind|is the point|set(s)? .* apart|no (predecessor|one) .* (made|posed)|the key (insight|idea) is|the (machine|engine) that|draw(s)? .* power from|under the hood|where .* meets" sections/*.tex
 
 # ── M6: throat-clearing openers ──
 grep -rnE "^(Moreover|Furthermore|Additionally|Notably|Importantly|Indeed|Ultimately|Crucially|In turn|That said)" sections/*.tex
@@ -170,7 +170,7 @@ grep -rnoiE "\bcomprised of\b|\bdata is\b|different than|\bvery unique\b|\bdue t
 # ── Term/decomposition drift (see gate_semantic S8/S9): one name per concept ──
 #   (a) For each canonical term in the project_context term-map, show every surface form + location,
 #       then converge. Replace the list with the paper's real synonym clusters.
-for t in "application workflow" "application behavior" "bottleneck conditions" "network conditions"; do
+for t in "term A" "term A variant" "term B" "term B variant"; do
   echo "== $t =="; grep -rn "$t" sections/*.tex | grep -v '^\s*%'; done
 #   (b) Decomposition cardinality: do all the "N <noun>" counts agree across sections?
 grep -rnoE "\b(three|four|five|six|seven)\b (stages|concerns|axes|requirements|dimensions|systems)" sections/*.tex

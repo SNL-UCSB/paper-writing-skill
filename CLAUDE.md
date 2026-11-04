@@ -39,6 +39,12 @@ one positive craft reference:
 
 **brainstorming_guide.md** defines the 34-question, 6-phase brainstorming workflow that produces a `project_context.md`.
 
+**story_mode.md** defines the ten-step workflow (with a short path) that turns an existing record (notes, drafts, code, related work) into a paper story, an outline and a calibration spec.
+
+**USAGE.md** is the student-facing guide: first session, which mode for which situation, outputs, iteration, other skills, customizing, privacy.
+
+This repository is public. Every example must be synthetic. A group's real cases, project records and internal notes belong in a private overlay skill (an installed skill whose name ends in `paper-writing-lab`), never here.
+
 **figure_synthesis_guide.md** defines the 3-mode workflow (spec → generate → critique) for non-data figures — architecture diagrams, pipeline illustrations, concept diagrams, comparison schematics. Uses a hybrid approach: AI image generation prompts (Gemini/DALL-E) for visually rich figures, TikZ for precise structural figures.
 
 **figure_templates/** contains supporting files for figure synthesis:
@@ -47,13 +53,13 @@ one positive craft reference:
 - `tikz_skeletons.md` — TikZ starter templates per archetype (pipeline flow, component detail, taxonomy)
 - `figure_spec_template.md` — per-figure spec template (filled during spec mode, consumed during generate mode)
 
-**examples/** contains the `project_context.md` template and a real completed example (NetBurst).
+**examples/** contains the `project_context.md` template and a fully synthetic completed example (`example_project_context.md`).
 
 ## Key Design Decisions
 
 - **Introduction-twice** is the most impactful principle. The introduction is written twice: Draft 0 (framing scaffold) before the evaluation, then the final introduction rewritten from scratch after the evaluation. Section drafts follow: Draft 0 Introduction → Evaluation → Design → Background → Related Work → Final Introduction → Abstract.
 - **`project_context.md`** is generated per-paper in the user's working directory (not in this repo). It should be gitignored.
-- The `setup` script copies a specific subset of files (SKILL.md, brainstorming_guide.md, figure_synthesis_guide.md, author_profile/, writing_checklists/, section_rhetorical_moves/, figure_templates/, examples/) — it intentionally excludes README.md and setup itself.
+- The `setup` script copies a specific subset of files (SKILL.md, brainstorming_guide.md, story_mode.md, figure_synthesis_guide.md, red_team_protocol.md, loop_mode.md, author_profile/, writing_checklists/, section_rhetorical_moves/, figure_templates/, examples/) — it intentionally excludes README.md and setup itself.
 - Voice rules ship as defaults from the SNL lab. Students customize by editing `author_profile/` files after installation.
 - **Signposting through claims**: section preambles are encouraged when they state the section's conclusion, but banned when content-free ("In this section, we describe...").
 - **Topic-sentence-first drafting**: before writing full prose for any section, write all topic sentences and verify they form a coherent argument. This intermediate scaffolding step sits between Architecture (section outline) and full drafting.
