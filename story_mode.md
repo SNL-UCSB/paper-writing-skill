@@ -20,6 +20,7 @@ These files describe unpublished work. Keep them in a private repository; if you
 ## Before you start
 
 - Put every source where Claude can read it: draft files, exported meeting notes, a local clone of each repository, reviews of earlier submissions, saved PDFs of the closest work. Claude cannot read what it cannot open; a missing source becomes a hole in the story.
+- If a source the record treats as authoritative (an earlier outline, a calibration spec, a key paper) is unavailable, ask for it before step 2. Do not reconstruct it from summaries.
 - Use git for the `story/` files and commit after every step, so you can compare versions and undo a bad rewrite.
 - Decide who confirms the framing: your advisor, your co-authors, or you.
 
@@ -53,9 +54,11 @@ Each step gives its purpose, a request to adapt, what the output must contain, h
 **Request.**
 > Synthesize a possible outline for <venue> in `story/outline.md`. Do not come up with ideas that have not been discussed. Connect the dots of what has already been discussed, cited and thought about as contributions. Don't make things up. Put anything that goes beyond the record in a separate section for me to accept or reject.
 
-**Output.** The outline, a section "Steps beyond the record", and a note "Where the record differs from your account".
+**Output.** The outline, a section "Steps beyond the record", and a note "Where the record differs from your account". The note also lists every element agreed earlier (in meetings, in the earlier paper, in the advisor's last restatement of the story) and what the new outline does with each: keeps it, refines it, demotes it or drops it.
 
-**Done when** a fresh reviewer has checked the outline against the sources and every proposal not in the record is labeled.
+**Precedence.** The latest statement in the record from the advisor (or whoever decides the framing) outranks any reviewer's suggestion, including a fresh reviewer's. Demoting or dropping an agreed element needs their words. A proposal they heard without objecting is "on record, pending", and it does not go under "Steps beyond the record".
+
+**Done when** a fresh reviewer has checked the outline against the sources, every proposal not in the record is labeled, and every agreed element has a stated fate.
 
 **Failure.** Claude's own proposals presented as yours, or two projects merged. *Say:* "Mark what is yours. Keep <project A> and <project B> separate."
 
@@ -96,7 +99,11 @@ The "usable as it stands" bar is a default suited to systems venues. Adjust it t
 
 **Output.** One core contribution, with supporting contributions as bullets under it. Every other claim gets a verdict: survives, becomes a measurement, becomes a design choice, narrowed, or dropped. Positioning rests on two or three differences in mechanism; avoid feature-checklist tables.
 
-**Done when** a reader can say in one sentence what the paper contributes.
+Also required:
+- An exemplar table with columns *case | the closest work's reading | our reading | how the paper uses it*. Include at least one case where the two readings agree, and name the case the story leads with.
+- An answer to: "Could a simpler method (for example, trimming or relabeling data after the run) produce the same result?" If yes, the contribution must say why that method does not suffice.
+
+**Done when** a reader can say in one sentence what the paper contributes, the exemplar table names the lead case, and the simpler-method question has an answer.
 
 **Failure.** "I can't point at what this paper is about." Go to step 6.
 
@@ -109,7 +116,7 @@ The "usable as it stands" bar is a default suited to systems venues. Adjust it t
 
 Then: *"Rewrite around <choice> and cut everything that serves only the other framings."*
 
-**Output.** An identity paragraph you can point at; the terms the paper will use from now on; what the artifact is and is not.
+**Output.** An identity paragraph you can point at; the terms the paper will use from now on; what the artifact is and is not. When the record holds a spoken or written restatement of the story by the advisor, seed the identity paragraph from the latest one and say where it came from (meeting and date, or document).
 
 **Done when** a fresh reviewer restates the paper in one sentence and gets it right.
 
@@ -125,11 +132,14 @@ If a draft already exists, add: *"Rethink the structure rather than patching the
 **Output.**
 - The Draft 0 introduction and the motivation outline.
 - A design section organized around the one question the paper answers.
-- If an earlier paper exists, a ledger of its terms marked kept, refined, added or dropped, with reasons.
+- Required whenever an earlier paper or draft exists: a ledger of its terms marked kept, refined, added or dropped, with a reason for each.
 - A running example detailed enough to exercise every mechanism.
+- A table mapping each supporting contribution to the line or step of the running example that exercises it. When a contribution concerns coordination or interaction, the example has at least two interacting components.
+- A sketch of Figure 1: what it shows, in words.
+- A claims-by-evidence grid: one row per claim, one column per kind of evidence, with cells already measured kept apart from cells still to run.
 - A page map: where each section and figure lands within the limit.
 
-**Done when** every design choice has a defense, and the running example breaks no mechanism.
+**Done when** every design choice has a defense, the running example breaks no mechanism, and the ledger (when an earlier paper or draft exists), the contribution-to-example table, the Figure 1 sketch, the claims-by-evidence grid and the page map are all present.
 
 ### 8. Tie every claim to an evaluation question that could refute it
 
@@ -138,9 +148,11 @@ If a draft already exists, add: *"Rethink the structure rather than patching the
 **Request.**
 > List the questions a skeptical reviewer would ask, in the order they would ask them. For each: the contribution it tests, the metric, the success criterion set in advance, the result that would refute the claim, and the baselines (the existing approach, ablations of our design, the strongest alternative given the same budget). Add a takeaway sentence per question.
 
-Also useful: *"List every requirement between <goal> and <output>. For each, how many cases need it and whether a known technique meets it. Confirm that our contribution addresses what is fundamental and that the rest is engineering."*
+Then: *"List every requirement between <goal> and <output>. For each, the property it forces, how many cases need it, and whether a known technique meets it. Confirm that our contribution covers what is fundamental and that the rest is engineering."*
 
-**Done when** every claim in the Draft 0 introduction maps to an experiment, and no comparison is won by construction.
+**Output.** The question list with its columns, and the requirements derivation: every requirement, the property it forces, whether a known technique meets it, and a statement that the contribution covers what is fundamental. An aim the advisor stated (for example, robustness to future tools) is argued in the design. Moving it to "not claimed" needs the advisor's agreement; ask first.
+
+**Done when** every claim in the Draft 0 introduction maps to an experiment, no comparison is won by construction, and the requirements derivation is present.
 
 ### 9. Converge: review rounds and a calibration spec
 
@@ -151,7 +163,18 @@ Also useful: *"List every requirement between <goal> and <output>. For each, how
 
 Then: *"Write `story/spec.md`, a one-page calibration spec: the core contribution and its supports, facts to state carefully ('say X, never Y'), the evaluation questions, and the terms. Check every document against it."* After each meeting or major new result: *"Calibrate the outline and spec against <notes or results>."*
 
-**Done when** a round finds nothing critical or major. Before submission, have the reviewer apply the venue's published review criteria.
+**Story documents.** For an outline or other story document (as opposed to paper prose), cap review at three rounds. Count only critical findings and majors that change a claim; minor wording does not block. The closure reviewer also confirms that the ledger of earlier terms, the contribution-to-example table, the requirements derivation and the page map are present.
+
+**Done when** a round finds nothing critical or major (for a story document, nothing critical and no major that changes a claim, within three rounds). Before submission, have the reviewer apply the venue's published review criteria.
+
+#### Story document gate profile
+
+A planning document is checked with a lighter profile than paper prose:
+- Coin about ten new terms at most; explain each where it first appears.
+- Keep citations out of running text: use bracket keys or a sources list.
+- No process asides addressed to the reader (for example, "as I read your draft").
+- The Draft 0 introduction may restate later sections. Phrases repeated between the Draft 0 and the outline do not count as repetition.
+- Run the mechanical tools on Markdown through the conversion your group's tooling provides, or remove tables and bullets first.
 
 ### 10. Hand off to the pipeline
 
@@ -166,7 +189,7 @@ Stage 2 (Architecture) then refines the step 7 page map, and Stage 3 starts from
 
 Every venue uses the six moves in `section_rhetorical_moves/introduction.md` (Stakes, Problem Gap, Key Abstraction, Design Intuition, Contributions, Results Preview). Story mode adds two: **why it is new** (two or three mechanism-level contrasts, one sentence each) after Design Intuition, and **limits, stated once** at the end.
 
-- **Systems and networking conferences (e.g., SIGCOMM).** The Problem Gap names why the problem is hard (the binding constraint, often a cost) and why existing solutions fall short (what each assumes or fixes in advance). Section 2 argues the pain point in depth and maps each difficulty to a requirement and the experiment that tests it.
+- **Systems and networking conferences (e.g., SIGCOMM).** Answer the Kurose questions, from Jim Kurose's advice on writing introductions, in order: why the problem matters, what the problem is, why it is hard, why existing solutions fall short, the key idea and approach, the contributions, the results, and the limits. The story arc leads with the stakes and a measured need before any mechanism. The Problem Gap names why the problem is hard (the binding constraint, often a cost) and why existing solutions fall short (what each assumes or fixes in advance). Section 2 argues the pain point in depth and maps each difficulty to a requirement and the experiment that tests it.
 - **Systems venues with a deployment focus (e.g., NSDI).** The Problem Gap includes a deployment constraint; the Results Preview leads with performance against strong baselines.
 - **Measurement venues (e.g., IMC).** Stakes lead with what the data reveals. The Problem Gap covers how representative the vantage point is and how much ground truth exists. Contributions are findings plus the method; limits cover bias in the data.
 - **Workshops (e.g., HotNets).** Lead with the question and the observation. Contributions are an insight and a sign it is feasible; open questions replace most of the Results Preview.

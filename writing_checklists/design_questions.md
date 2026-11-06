@@ -15,6 +15,7 @@ Derived from design rhetorical move analysis across 6 papers (see `section_rheto
 - [ ] For every major design choice, is there a **"why" argument**?
 - [ ] Does the section explain **why alternatives were rejected** (not just what was chosen)?
 - [ ] Is the justification grounded in **empirical observation** or **requirement analysis**, not just intuition?
+- [ ] **Derive the artifact:** for each requirement, the property it forces, the known formalism or system that has it, and why the earlier name or object fails.
 
 ## Abstraction vs. Implementation
 - [ ] Does the section lead with **user-facing abstractions** (APIs, interfaces, programming model)?

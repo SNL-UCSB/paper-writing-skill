@@ -16,6 +16,7 @@ Derived from evaluation rhetorical move analysis across 6 papers (see `section_r
 - [ ] Are baselines **described precisely enough** for the reader to understand what they are?
 - [ ] Are **metrics defined** and **justified** (why these metrics for these claims)?
 - [ ] Is the dataset described (size, source, time period, any biases)?
+- [ ] If the work automates a task an AI agent could perform, is there a baseline in which a pinned agent, given the same access and budget, performs it? Freeze its output and rerun it like ours.
 
 ## Result Presentation
 - [ ] Are detailed numerical comparisons in **tables or figures**, not inline prose?

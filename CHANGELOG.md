@@ -13,6 +13,11 @@ All notable changes to the paper-writing skill.
 - Every example is now synthetic. The filled-in project context is a fictional system (`examples/example_project_context.md`); example sentences, headings, captions and numbers across the rules and guides were rewritten to teach the same lessons without referring to real projects.
 - The skill description names the defaults as the SNL lab's house style (customizable) and no longer lists specific papers as triggers.
 - `setup` installs `story_mode.md`.
+- Story mode tightened after a blind test in which simulated students fell short on story arc, ties to the earlier paper, design derivation, running example and density, and over-ran review rounds: ask for missing authoritative sources before step 2; list the fate of every agreed element, with a precedence rule for the advisor's latest statement (step 2); an exemplar table and a simpler-method check (step 5); seed the identity paragraph from the advisor's latest restatement (step 6); a required ledger of earlier terms, a contribution-to-example table, a Figure 1 sketch and a claims-by-evidence grid (step 7); a required requirements derivation, and stated aims stay argued (step 8); a three-round cap for story documents and a story document gate profile (step 9); the Kurose questions named for systems venues.
+- Checklists: `design_questions.md` asks to derive the artifact from its requirements; `evaluation_questions.md` asks for a pinned-agent baseline when an AI agent could do the task.
+
+### Fixed
+- `gate_mechanical.md` M2 grep: the "not" branch now uses `([[:alnum:]]|\\)` in single quotes, so it runs on both GNU and BSD (macOS) grep.
 
 ## [v3.0.1] — 2026-07-20 — Fix-level provenance in the audit ledger
 
