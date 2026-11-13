@@ -2,6 +2,14 @@
 
 All notable changes to the paper-writing skill.
 
+## [v3.3.1] 2026-11-13: Figure text passes the prose gates
+
+### Changed
+- `story_document.md`:
+  - rule 9: box labels, annotations, legends and captions pass the same writing gates, slogan read and term ledger as the prose, with examples of compressed figure fragments and their plain rewrites;
+  - a checklist item: reviewers extract the figure text and read it;
+  - a failure-mode row: clean prose, AI-sounding figures.
+
 ## [v3.3.0] 2026-11-13: Story document template
 
 ### Added
