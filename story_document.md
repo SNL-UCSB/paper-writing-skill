@@ -114,6 +114,12 @@ The evaluation plan has four parts, and each one is required:
 6. **Every lead-time or speedup number names its start and end points.** Example: "22 minutes from the moment the rule fires to the outage".
 7. **Proposed thresholds are labeled as proposed.**
 8. **Internal pages stay private.** A page carrying unpublished numbers or partner names is published privately and says so in its header.
+9. **Figure text passes the same gates as the prose.** Every box label, annotation, legend and caption is prose, and the writing gates, slogan read and lexicon ledger apply to it in full. Figures are where AI cadence survives longest, because a narrow box invites compressed fragments: clauses glued with semicolons, dropped verbs and articles, coined phrasings, checkmarks standing in for claims.
+   - ✗ `one fault trips hundreds of alarms; links that look separate share a building`
+   - ✓ `The failure raised hundreds of alarms, and all four links ran through that building.`
+   - ✗ `13:23 automated alarm names it ✓` → ✓ `13:23 alarm names the right device`
+   - ✗ `cheap, continuous monitoring that stands in for the expensive model` → ✓ `a cheap model that labels every window, so the expensive model runs less often`
+   A short noun label on a node ("ticket", "repair") is fine. Any text that makes a claim is a complete sentence in plain words. If it does not fit, widen the box or move the claim to the caption; do not compress it. Use the same terms as the key-terms table.
 
 ## Review checklist (step 9)
 
@@ -126,6 +132,7 @@ A fresh reviewer, given only the sources and the page, checks:
 - [ ] Every person's quoted position matches the record (no strawman of a co-author's view).
 - [ ] No undefined acronym, codename or decode-me label in running text.
 - [ ] Every figure renders and is read: open the page and look at each one.
+- [ ] Figure text (labels, annotations, legends, captions) was extracted and read sentence by sentence against the gates. A review that reads only the Markdown has not checked the figures.
 
 ## Failure modes
 
@@ -137,4 +144,5 @@ A fresh reviewer, given only the sources and the page, checks:
 | An anecdote treated as a finding | No trend table | Add 4.3 with the data each trend needs |
 | An evaluation plan that is a list of metrics | No setup, no available-versus-needed | Fill the Section 6 tables |
 | A wrong headline number | Two events merged, or a lead time with no named start | Rules 5 and 6; re-read the source timeline |
+| Clean prose, AI-sounding figures | Reviews read the page source and skipped the text inside the figures | Rule 9: extract every label and caption and run the gates on them |
 | Co-authors' views flattened | Paraphrase instead of quotes | Quote each view with date and source |
