@@ -84,6 +84,7 @@ paper-writing-skill/
 ├── USAGE.md                       # How to use the skill well (start here)
 ├── brainstorming_guide.md         # 34 questions across 6 phases
 ├── story_mode.md                  # From a group's existing record to a story and outline
+├── story_document.md              # Template for the one-page story document co-authors read
 ├── figure_synthesis_guide.md      # Non-data figure workflow
 ├── red_team_protocol.md           # Independent, evidence-gated review
 ├── loop_mode.md                   # Resumable /loop audit-and-fix

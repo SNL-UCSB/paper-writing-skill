@@ -132,7 +132,8 @@ grep -rn -- '---' sections/*.tex ; grep -rn $'—\|–' sections/*.tex
 grep -rnoE "\b(is|are|was|were|be|been|being)\s+([a-z]+ed|done|made|shown|given|taken|held|built|drawn|chosen|written|known|found|seen|set|put|sent|kept|met|run|used|based)\b" sections/*.tex
 
 # ── M2: Antithesis / negation-as-rhetoric (inspect each; "not" branch matches digit/letter/\macro) ──
-grep -rnoE ",? not [0-9A-Za-z\\]|not only .* but|rather than|less .* than|is the point|whatever it is|means nothing|more than just|not in competition with|on one hand|on the other hand" sections/*.tex
+# Portable across GNU and BSD (macOS) grep: [[:alnum:]] plus a separate '\\' branch, no backslash inside [ ].
+grep -rnoE ',? not ([[:alnum:]]|\\)|not only .* but|rather than|less .* than|is the point|whatever it is|means nothing|more than just|not in competition with|on one hand|on the other hand' sections/*.tex
 
 # ── M3/M4/M8/M9: editorializing, intensifiers, grandiose setups, metaphor filler ──
 grep -rnoE "in effect|in a sense|at (its|the) (heart|core)|in essence|\btruly\b|\bgenuinely\b|\bindeed\b|\bin fact\b|precisely because|a testament to|the kind of .* that|exactly the kind|is the point|set(s)? .* apart|no (predecessor|one) .* (made|posed)|the key (insight|idea) is|the (machine|engine) that|draw(s)? .* power from|under the hood|where .* meets" sections/*.tex

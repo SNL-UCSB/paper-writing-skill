@@ -2,6 +2,15 @@
 
 All notable changes to the paper-writing skill.
 
+## [v3.3.0] 2026-11-13: Story document template
+
+### Added
+- **`story_document.md`**: the template for the one-page story document that co-authors read, built in story mode steps 7 to 9. Front matter (key terms, the argument as a figure and numbered steps, a roadblock table, the novelty test), then the paper's sections in order. These are: a Kurose-question introduction; background built around the core abstraction; a problem specification table (unit, input, output, ground truth, how records are generated, each record's blind spot, rules for learning, assumptions); empirical motivation with anecdotes first and a table of trends second; design with the alternatives mapped; and an evaluation plan with numbered questions, a setup inventory, a per-question table of data available against data needed, and a stop rule. Includes readability rules (a figure for every main point, plain words over internal names, no decode-me labels, sources and scope on every number, separating overlapping events, naming the start and end of every lead time), a review checklist and failure modes. All examples are synthetic.
+
+### Changed
+- `story_mode.md` lists the story document among the outputs and points to the template in steps 7 and 8. Three failure modes were added: a cryptic page with no arc, a problem statement nobody can check, and an evaluation plan without setup.
+- `setup`, `README.md` and `USAGE.md` include the new file.
+
 ## [v3.2.0] — 2026-11-04 — Story mode, usage guide, synthetic examples
 
 ### Added
@@ -13,6 +22,11 @@ All notable changes to the paper-writing skill.
 - Every example is now synthetic. The filled-in project context is a fictional system (`examples/example_project_context.md`); example sentences, headings, captions and numbers across the rules and guides were rewritten to teach the same lessons without referring to real projects.
 - The skill description names the defaults as the SNL lab's house style (customizable) and no longer lists specific papers as triggers.
 - `setup` installs `story_mode.md`.
+- Story mode tightened after a blind test in which simulated students fell short on story arc, ties to the earlier paper, design derivation, running example and density, and over-ran review rounds: ask for missing authoritative sources before step 2; list the fate of every agreed element, with a precedence rule for the advisor's latest statement (step 2); an exemplar table and a simpler-method check (step 5); seed the identity paragraph from the advisor's latest restatement (step 6); a required ledger of earlier terms, a contribution-to-example table, a Figure 1 sketch and a claims-by-evidence grid (step 7); a required requirements derivation, and stated aims stay argued (step 8); a three-round cap for story documents and a story document gate profile (step 9); the Kurose questions named for systems venues.
+- Checklists: `design_questions.md` asks to derive the artifact from its requirements; `evaluation_questions.md` asks for a pinned-agent baseline when an AI agent could do the task.
+
+### Fixed
+- `gate_mechanical.md` M2 grep: the "not" branch now uses `([[:alnum:]]|\\)` in single quotes, so it runs on both GNU and BSD (macOS) grep.
 
 ## [v3.0.1] — 2026-07-20 — Fix-level provenance in the audit ledger
 

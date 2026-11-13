@@ -32,6 +32,7 @@ claude
 | Ideas spread across notes, drafts, code, reviews and related work, or a draft whose framing is unsettled | A coherent story and an outline for a venue | *"Turn our notes into a <venue> outline"* or `/paper-writing story` (`story_mode.md`; short path for workshops) |
 | An idea, no draft | A framed plan | `/paper-writing` (Structured Brainstorming) |
 | A draft, no project context | To join the pipeline midway | *"Build project_context.md from my draft; ask only about gaps"* |
+| Story-mode files, and co-authors who need one page to read | A story document: argument, problem specification, anecdotes then trends, evaluation plan with data available versus needed, a figure per main point | *"Build the story document"* (`story_document.md`) |
 | A project context | Section plan and page budget | *"Plan the architecture for <venue>"* (Stage 2) |
 | A plan | A section draft | *"Help me write the evaluation"* (Stage 3; order: Draft 0 intro, evaluation, design, background, related work, final intro, abstract) |
 | All sections drafted | Consistency across sections | *"Run the integration pass"* (Stage 4) |
@@ -51,7 +52,7 @@ claude
 | Your `.tex` sections | Drafting, compression and review modes edit them in place | Yes; review each diff |
 | `figure_spec.md` | Figure synthesis | Yes |
 | `notes/AUDIT_LEDGER.md` | Loop mode (one entry per finding) | Yes, it is how a loop resumes |
-| `story/digest.md`, `story/outline.md`, `story/spec.md` | Story mode | Only if your paper repository is private; otherwise add `story/` to `.gitignore` |
+| `story/digest.md`, `story/outline.md`, `story/spec.md`, `story/page.md` (the story document) | Story mode | Only if your paper repository is private; otherwise add `story/` to `.gitignore` |
 
 ## 5. Iterating well
 
