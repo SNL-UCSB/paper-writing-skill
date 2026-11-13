@@ -13,7 +13,8 @@ Saved in your paper repository under `story/`:
 1. `story/digest.md`: what each source says, with dates and citations, and where sources disagree.
 2. `story/outline.md`: the problem, why it is hard, why existing work falls short, the key idea, one core contribution with supporting contributions, the evaluation questions with what would refute each claim, a Draft 0 introduction, and a skeleton of every section with a page budget.
 3. `story/spec.md`: a one-page **calibration spec** (framing, facts to state carefully, terms) that every later document is checked against.
-4. `project_context.md`, filled from the three files above (step 10).
+4. `story/page.md` (rendered as one page): the **story document**, the single page co-authors read. Front matter, then the paper's sections in order, with a figure for every main point. Its template is in `story_document.md` (steps 7 to 9).
+5. `project_context.md`, filled from the files above (step 10).
 
 These files describe unpublished work. Keep them in a private repository; if your paper repository is shared or public, add `story/` and `project_context.md` to `.gitignore` (the skill adds `project_context.md` by default).
 
@@ -141,6 +142,8 @@ If a draft already exists, add: *"Rethink the structure rather than patching the
 
 **Done when** every design choice has a defense, the running example breaks no mechanism, and the ledger (when an earlier paper or draft exists), the contribution-to-example table, the Figure 1 sketch, the claims-by-evidence grid and the page map are all present.
 
+Then assemble the **story document** (`story_document.md`): key terms, the argument as a figure and numbered steps, the roadblock table, the novelty test, a Kurose-question introduction, background built around the core abstraction, a problem specification (unit, input, output, ground truth, how records are generated, each record's blind spot), and empirical motivation that tells one or two anecdotes before the table of trends they stand for.
+
 ### 8. Tie every claim to an evaluation question that could refute it
 
 **Purpose.** Make sure each claim in the introduction has an experiment that tests it.
@@ -152,7 +155,9 @@ Then: *"List every requirement between <goal> and <output>. For each, the proper
 
 **Output.** The question list with its columns, and the requirements derivation: every requirement, the property it forces, whether a known technique meets it, and a statement that the contribution covers what is fundamental. An aim the advisor stated (for example, robustness to future tools) is argued in the design. Moving it to "not claimed" needs the advisor's agreement; ask first.
 
-**Done when** every claim in the Draft 0 introduction maps to an experiment, no comparison is won by construction, and the requirements derivation is present.
+In the story document, the evaluation plan has four parts: the numbered questions; the setup (what data and systems exist today, with unknowns marked); a per-question table of what is available now against the additional data or insight needed, with the result that would change the claim; and the expected outcomes with a stop rule. See `story_document.md`, Section 6.
+
+**Done when** every claim in the Draft 0 introduction maps to an experiment, no comparison is won by construction, the requirements derivation is present, and every question has its available-versus-needed entry.
 
 ### 9. Converge: review rounds and a calibration spec
 
@@ -200,6 +205,9 @@ Every venue uses the six moves in `section_rhetorical_moves/introduction.md` (St
 
 | Symptom | How to catch it | What to say |
 |---|---|---|
+| A story page that is cryptic or has no arc | Working files pasted into one page; labels like "T2" in prose; no figures | "Rebuild it from `story_document.md`: front matter, paper order, a figure per main point, plain words." |
+| A problem statement nobody can check | No unit, ground truth or blind spots | "Fill the problem-specification table in `story_document.md`." |
+| An evaluation plan that lists metrics only | No setup; nothing on what data must still be gathered | "Add the setup inventory and the available-versus-needed table." |
 | Story built from one source | The digest cites one document | "Read <repo, earlier notes, code>; what contradicts this?" |
 | Claims taken from abstracts or READMEs | Ask where each claim came from | "Show the quote or the code line." |
 | Over-reaction to a loose resemblance | "Already done" with no defense written | "Argue it both ways. Could they use it as it stands?" |

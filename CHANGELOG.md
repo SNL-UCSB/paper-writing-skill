@@ -2,6 +2,15 @@
 
 All notable changes to the paper-writing skill.
 
+## [v3.3.0] 2026-11-13: Story document template
+
+### Added
+- **`story_document.md`**: the template for the one-page story document that co-authors read, built in story mode steps 7 to 9. Front matter (key terms, the argument as a figure and numbered steps, a roadblock table, the novelty test), then the paper's sections in order. These are: a Kurose-question introduction; background built around the core abstraction; a problem specification table (unit, input, output, ground truth, how records are generated, each record's blind spot, rules for learning, assumptions); empirical motivation with anecdotes first and a table of trends second; design with the alternatives mapped; and an evaluation plan with numbered questions, a setup inventory, a per-question table of data available against data needed, and a stop rule. Includes readability rules (a figure for every main point, plain words over internal names, no decode-me labels, sources and scope on every number, separating overlapping events, naming the start and end of every lead time), a review checklist and failure modes. All examples are synthetic.
+
+### Changed
+- `story_mode.md` lists the story document among the outputs and points to the template in steps 7 and 8. Three failure modes were added: a cryptic page with no arc, a problem statement nobody can check, and an evaluation plan without setup.
+- `setup`, `README.md` and `USAGE.md` include the new file.
+
 ## [v3.2.0] — 2026-11-04 — Story mode, usage guide, synthetic examples
 
 ### Added
